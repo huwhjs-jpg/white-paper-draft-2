@@ -1,0 +1,373 @@
+<title>China Playbook Restructure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<style>
+/* Layout: one reading column for argument, wide panels for the budget bar, outline and matrices. House palette from the earlier review pages. */
+:root{
+  --bg:#F8FAFD; --surface:#FFFFFF; --pale:#EAF2FD; --ink:#0D1E43; --text:#1F2A40; --muted:#56627A;
+  --rule:#D5DDEA; --accent:#0B6FD9; --fill:#198CFF;
+  --g1:#0D1E43; --g2:#2A78D2; --g3:#8DB9EC; --g4:#C9DDF6; --gnew:#C07A00; --gcut:#E6EAF1;
+  --on1:#FFFFFF; --on3:#0D1E43;
+  --warn:#8F5400; --warn-bg:#FCEFD6;
+  --serif:"Source Serif 4","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0B1426; --surface:#111D35; --pale:#13284A; --ink:#E8EEF8; --text:#D3DBE8; --muted:#9AA8C0;
+    --rule:#263552; --accent:#6BB4FF; --fill:#3D9BFF;
+    --g1:#B7D4F7; --g2:#5B97DE; --g3:#2B5A9C; --g4:#1D3B69; --gnew:#D9A441; --gcut:#1A2742;
+    --on1:#0B1426; --on3:#FFFFFF;
+    --warn:#F2B65A; --warn-bg:#3A2A0E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0B1426; --surface:#111D35; --pale:#13284A; --ink:#E8EEF8; --text:#D3DBE8; --muted:#9AA8C0;
+  --rule:#263552; --accent:#6BB4FF; --fill:#3D9BFF;
+  --g1:#B7D4F7; --g2:#5B97DE; --g3:#2B5A9C; --g4:#1D3B69; --gnew:#D9A441; --gcut:#1A2742;
+  --on1:#0B1426; --on3:#FFFFFF;
+  --warn:#F2B65A; --warn-bg:#3A2A0E;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;padding-inline:20px;padding-block:0 72px;margin:0}
+.wrap{max-width:1040px;margin:0 auto;display:grid;gap:0}
+.prose{max-width:700px}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:600;line-height:1.2;margin:0;text-wrap:balance}
+h1{font-size:clamp(30px,4.4vw,40px)}
+h2{font-size:25px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+h3{font-size:18.5px}
+p{margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--fill);outline-offset:2px}
+.eyebrow{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+header.top{border-bottom:3px solid var(--ink);padding-block:40px 24px;display:grid;gap:12px}
+.lede{font-size:18px;max-width:720px}
+.meta{font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;padding-block:14px;border-bottom:1px solid var(--rule)}
+nav.toc a{text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+section{padding-top:44px;display:grid;gap:16px}
+ul,ol{margin:0;padding-left:22px;display:grid;gap:6px}
+.mono{font-family:var(--mono);font-size:13px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* verdict band */
+.verdict{background:var(--ink);color:var(--bg);padding:22px 24px;display:grid;gap:10px}
+.verdict p{max-width:760px;font-size:17px}
+.verdict b{color:inherit}
+
+/* page budget bars */
+.budget{display:grid;gap:18px;background:var(--surface);border:1px solid var(--rule);padding:18px 18px 14px}
+.brow{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;align-items:center}
+.blab{font-size:13.5px;color:var(--muted)}
+.blab b{display:block;font-family:var(--mono);font-size:20px;color:var(--ink);font-weight:500}
+.bar{display:flex;height:46px;width:100%;min-width:0}
+.seg{display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;line-height:1.1;text-align:center;padding:0 3px;overflow:hidden;border-right:2px solid var(--surface);min-width:0}
+.s-front{background:var(--g4);color:var(--on3)}
+.s-p1{background:var(--g2);color:#fff}
+.s-p2{background:var(--g1);color:var(--on1)}
+.s-new{background:var(--gnew);color:#fff}
+.s-mk{background:var(--g3);color:var(--on3)}
+.s-p4{background:var(--g2);color:#fff;opacity:.75}
+.s-end{background:var(--g4);color:var(--on3)}
+.s-waste{background:repeating-linear-gradient(135deg,var(--gcut) 0 6px,var(--surface) 6px 12px);color:var(--muted)}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted)}
+.key i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+
+/* tables */
+.tw{overflow-x:auto;border:1px solid var(--rule);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:760px}
+th{background:var(--ink);color:var(--bg);text-align:left;font-weight:600;padding:9px 12px;font-size:13px;vertical-align:bottom}
+td{padding:10px 12px;border-top:1px solid var(--rule);vertical-align:top}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--pale) 55%,transparent)}
+td.n,th.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+td .hint{display:block;font-size:13px;color:var(--muted);font-style:italic;margin-top:2px}
+td .from{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+.ch{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:15.5px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1px 7px;border-radius:3px;white-space:nowrap}
+.t-new{background:var(--gnew);color:#fff}
+.t-merge{background:var(--pale);color:var(--accent)}
+tr.part td{background:var(--pale)!important;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent);padding:6px 12px}
+tr.total td{border-top:2px solid var(--ink);font-weight:700;color:var(--ink)}
+
+/* spine */
+.spine{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.q{background:var(--surface);border:1px solid var(--rule);padding:12px 14px;display:grid;gap:6px;align-content:start}
+.q .k{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.q b{font-family:var(--serif);font-size:16px;color:var(--ink);font-weight:600;line-height:1.3}
+.q span{font-size:13.5px;color:var(--muted)}
+.q.new{border-color:var(--gnew);box-shadow:inset 0 3px 0 var(--gnew)}
+
+/* phases */
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--rule);background:var(--surface)}
+.ph{padding:14px 14px 16px;border-right:1px solid var(--rule);display:grid;gap:6px;align-content:start}
+.ph:last-child{border-right:0}
+.ph .yr{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.ph b{font-family:var(--serif);font-size:17px;color:var(--ink)}
+.ph ul{font-size:13.5px;gap:4px;padding-left:16px}
+.inflect{border-top:3px solid var(--gnew)}
+.inflect .tp{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gnew)}
+@media (max-width:760px){.phases{grid-template-columns:1fr 1fr}.ph:nth-child(2){border-right:0}.ph:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+@media (max-width:460px){.phases{grid-template-columns:1fr}.ph{border-right:0;border-bottom:1px solid var(--rule)}}
+
+/* clocks matrix */
+.clock td.c{text-align:center;font-size:12.5px;font-weight:600;white-space:nowrap}
+.c0{color:var(--muted)}
+.c1{background:var(--g4)!important;color:var(--on3)}
+.c2{background:var(--g3)!important;color:var(--on3)}
+.c3{background:var(--g2)!important;color:#fff}
+.c4{background:var(--g1)!important;color:var(--on1)}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--accent);vertical-align:-1px}
+.dot.f{background:var(--accent)}
+.dot.h{background:linear-gradient(90deg,var(--accent) 50%,transparent 50%)}
+.lt td.m{text-align:center}
+
+.callout{background:var(--warn-bg);color:var(--warn);padding:14px 16px;display:grid;gap:6px;font-size:15px}
+.callout b{color:inherit}
+.cols2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--rule);padding:16px 18px;display:grid;gap:10px;align-content:start;min-width:0}
+.panel h3{font-size:17px}
+.small{font-size:13.5px;color:var(--muted)}
+.steps{counter-reset:s;list-style:none;padding:0;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--mono);font-size:13px;color:var(--accent);border:1.5px solid var(--accent);border-radius:50%;width:26px;height:26px;display:grid;place-items:center}
+@media (max-width:560px){.brow{grid-template-columns:1fr}.seg{font-size:0}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+<style>
+.arc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--rule);background:var(--surface)}
+.arc .c{padding:14px 16px 16px;border-right:1px solid var(--rule);display:grid;gap:6px;align-content:start}
+.arc .c:last-child{border-right:0}
+.arc .c .k{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.arc .c b{font-family:var(--serif);font-size:18px;color:var(--ink);line-height:1.25}
+.arc .c .qq{font-size:14px;color:var(--text)}
+.arc .c .pp{font-family:var(--mono);font-size:12.5px;color:var(--muted);border-top:1px solid var(--rule);padding-top:6px;margin-top:2px}
+.arc .c.new{box-shadow:inset 0 3px 0 var(--gnew)}
+@media (max-width:760px){.arc{grid-template-columns:1fr 1fr}.arc .c:nth-child(2){border-right:0}.arc .c:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+@media (max-width:460px){.arc{grid-template-columns:1fr}.arc .c{border-right:0;border-bottom:1px solid var(--rule)}}
+.secs{font-family:var(--sans);font-weight:400;font-size:13.5px;color:var(--muted);display:block;margin-top:4px}
+.thread{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.thread .panel{gap:6px}
+.thread .panel .k{font-family:var(--mono);font-size:12px;color:var(--gnew)}
+@media (max-width:760px){.thread{grid-template-columns:1fr}}
+</style><style>
+.w5{max-width:980px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr)}
+.w5>*{min-width:0}
+.ans{font-family:var(--serif);font-size:18.5px;color:var(--ink);line-height:1.45;border-left:3px solid var(--accent);padding:4px 0 4px 14px;max-width:760px}
+.ch5{display:grid;gap:14px;padding-top:44px}
+.ch5 .cq{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+.ch5 h2{border-bottom:1px solid var(--ink);padding-bottom:8px}
+.secs5{display:grid;gap:0;border:1px solid var(--rule);background:var(--surface)}
+.sec5{display:grid;grid-template-columns:52px minmax(0,1fr) minmax(0,.9fr);gap:6px 18px;padding:14px 18px;border-top:1px solid var(--rule)}
+.sec5:first-child{border-top:0}
+.sec5 .n{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:2px}
+.sec5 .t{display:grid;gap:4px;align-content:start}
+.sec5 .t b{font-family:var(--serif);font-size:16.5px;color:var(--ink);line-height:1.3}
+.sec5 .t span{font-size:14.5px}
+.sec5 .e{font-size:13.5px;color:var(--muted);display:grid;gap:4px;align-content:start}
+.sec5 .e i{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+.sec5.new{box-shadow:inset 3px 0 0 var(--gnew)}
+@media (max-width:760px){.sec5{grid-template-columns:40px minmax(0,1fr)}.sec5 .e{grid-column:2}}
+.story{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.story .s{background:var(--surface);border:1px solid var(--rule);padding:14px 16px;display:grid;gap:6px;align-content:start}
+.story .s .k{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.story .s b{font-family:var(--serif);font-size:17px;color:var(--ink);line-height:1.25}
+.story .s span{font-size:14px}
+@media (max-width:820px){.story{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.story{grid-template-columns:1fr}}
+.pairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pairs .p{background:var(--pale);padding:12px 14px;display:grid;gap:4px;align-content:start}
+.pairs .p b{font-family:var(--serif);font-size:16px;color:var(--ink)}
+.pairs .p span{font-size:13.5px}
+@media (max-width:700px){.pairs{grid-template-columns:1fr}}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--rule);background:var(--surface)}
+.stages .g{padding:14px 16px;border-right:1px solid var(--rule);display:grid;gap:4px;align-content:start}
+.stages .g:last-child{border-right:0}
+.stages .g .y{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.stages .g b{font-family:var(--serif);font-size:16.5px;color:var(--ink)}
+.stages .g span{font-size:13.5px}
+@media (max-width:700px){.stages{grid-template-columns:1fr}.stages .g{border-right:0;border-bottom:1px solid var(--rule)}}
+.lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+#tools .lists{grid-template-columns:1fr 1fr}
+#tools .lists>.panel:first-child{grid-column:1/-1}
+@media (max-width:700px){#tools .lists{grid-template-columns:1fr}}
+.yr5 td{white-space:normal}
+.yr5 td:last-child{text-align:right;font-family:var(--mono);font-size:13px}
+</style>
+<div class="wrap w5">
+<header class="top">
+  <p class="eyebrow">China Playbook upgrade · Restructure proposal v5 · 2 October 2026</p>
+  <h1>A simpler outline: four questions, three kinds of buyer, one story</h1>
+  <p class="lede">Written for a reader who does not work in the industry. Each chapter answers one plain question. Products are grouped by who buys them and how, not by industry label. A few named companies run through the paper so the reader can follow the story, and the detail sits in the appendices.</p>
+  <p class="meta"><span>Governing thought, central question, six learning labels, six readers and six failure modes as approved</span><span>Evidence: <a href="https://claude.ai/artifact/HfzcoDBEYUjiWGdizzZWo9">archetype dossiers</a></span><span>Replaces v4</span></p>
+</header>
+
+<nav class="toc" aria-label="On this page">
+  <a href="#story">The story</a><a href="#tools">Three simple tools</a><a href="#ch1">Chapter 1</a><a href="#ch2">Chapter 2</a><a href="#ch3">Chapter 3</a><a href="#ch4">Chapter 4</a><a href="#ex">Exhibits</a><a href="#app">Appendices</a><a href="#moved">What moved and why</a><a href="#status">Where we are</a>
+</nav>
+
+<section id="story">
+  <h2>The story in four questions</h2>
+  <div class="verdict"><p><b>The governing thought, unchanged:</b> Chinese equipment makers won share mainly by redesigning the commercial system around the machine, not by selling it cheaply, and most of their moves can be copied. Chapter 3 adds one finding: in the next products the same moves arrive in a different order, and who the buyer is decides the order.</p></div>
+  <div class="story">
+    <div class="s"><span class="k">Chapter 1</span><b>What happened?</b><span>Chinese makers became the main suppliers of heavy equipment across India and Southeast Asia. The shift turned twice, in 2022 and 2025, and it is not a commodity boom.</span></div>
+    <div class="s"><span class="k">Chapter 2</span><b>How did they do it?</b><span>Six moves, in three pairs: get in, win the sale, stay. Each has an example, a limit and a version others can copy.</span></div>
+    <div class="s"><span class="k">Chapter 3</span><b>Where is it heading next?</b><span>Into the machines factories buy, then robots. Equipment sold through distributors moves more slowly, on price first. How a product is bought sets the pace.</span></div>
+    <div class="s"><span class="k">Chapter 4</span><b>What should you do about it?</b><span>Know where the playbook breaks, make your first move, and watch five signs.</span></div>
+  </div>
+  <p class="prose small">The central question, as approved: Which of the moves that won Chinese OEMs share can be copied, by whom and how fast, and which product categories will they reach next? Chapter 2 answers "which moves", Chapter 3 "which categories next", and Chapter 4 "by whom and how fast". Chapter 1 shows why the question matters.</p>
+</section>
+
+<section id="tools">
+  <h2>Three simple tools the reader learns once</h2>
+  <div class="lists">
+    <div class="panel"><span class="lab" style="font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">1 · A three-stage timeline</span><p class="small">This replaces the four phase names.</p>
+      <div class="stages">
+        <div class="g"><span class="y">to 2021</span><b>Exporting the surplus</b><span>Selling abroad what China could not absorb; first footholds</span></div>
+        <div class="g"><span class="y">2022–24</span><b>Going overseas-first</b><span>Overseas becomes the main business (SANY: 23% to 46% of revenue in 2022)</span></div>
+        <div class="g"><span class="y">2025 on</span><b>Owning the system</b><span>Local plants, own finance companies, repair and parts</span></div>
+      </div></div>
+    <div class="panel"><span class="lab" style="font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">2 · One measure of progress</span><p class="small">For each product: the year China overtook Japan as the main supplier.</p>
+      <div class="tw"><table class="yr5" style="min-width:0">
+        <tbody>
+          <tr><td>Forklifts</td><td>2017–19</td></tr>
+          <tr><td>Excavators</td><td>2019</td></tr>
+          <tr><td>Plastic-moulding machines</td><td>2020</td></tr>
+          <tr><td>Robots</td><td>2025</td></tr>
+          <tr><td>Metal-cutting lathes</td><td>2025</td></tr>
+          <tr><td>Compressors and pumps</td><td>China already ahead</td></tr>
+        </tbody></table></div>
+      <p class="small">Import data, India, Indonesia, Thailand and Malaysia</p></div>
+    <div class="panel"><span class="lab" style="font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">3 · Three kinds of buyer</span><p class="small">This replaces the six product groups.</p>
+      <ul class="small">
+        <li><b>Contractors and fleets, through dealers:</b> excavators, cranes, forklifts. The original story.</li>
+        <li><b>Factories:</b> plastic-moulding machines, machine tools, laser cutters, and robots.</li>
+        <li><b>Plant engineers, off the shelf through distributors:</b> compressors, pumps, generators.</li>
+      </ul></div>
+  </div>
+</section>
+
+<section id="ch1" class="ch5">
+  <p class="cq">Chapter 1</p>
+  <h2>What happened?</h2>
+  <p class="ans">In under a decade Chinese makers became the main suppliers of heavy equipment in India and Southeast Asia. The shift turned twice, and it is structural, not a commodity boom.</p>
+  <div class="secs5">
+    <div class="sec5"><span class="n">1.1</span><div class="t"><b>The size of the shift</b><span>Three numbers carry it. China's share of Indonesia's excavator imports went from 33% to 75%, and of India's crane imports from 35% to 93%. In 2025 China overtook Japan as the main supplier of robots in all four markets with 2025 data.</span></div><div class="e"><i>Evidence</i>UN Comtrade, 2019–2025<i>Exhibit</i>1. Where China gained, by country and product</div></div>
+    <div class="sec5"><span class="n">1.2</span><div class="t"><b>When it turned</b><span>China's home market collapsed after 2021, and overseas became the main business in 2022. From 2025 Chinese makers began owning the whole system abroad: plants, finance companies, repair.</span></div><div class="e"><i>Evidence</i>CCMA sales: exports about 10% of units to 2020, about half from 2023; SANY's filings; dated moves<i>Exhibit</i>2. The timeline</div></div>
+    <div class="sec5"><span class="n">1.3</span><div class="t"><b>Not just a commodity boom</b><span>Komatsu lost share in Indonesia while the market grew and coal output hit records. China also gained in products that have nothing to do with mining. A plain verdict follows: structural in India and Indonesia, and in most of Thailand.</span></div><div class="e"><i>Evidence</i>United Tractors and Hexindo disclosures; the five tests, with details moved to the appendix</div></div>
+    <div class="sec5"><span class="n">1.4</span><div class="t"><b>The open question</b><span>Will share bought partly on easy credit survive the 2026–27 downturn? Chapter 4 says what to watch.</span></div><div class="e"><i>Evidence</i>Exports +33.5% in H1 2026; mining-permit delays in Indonesia; payment delays in Indian road building</div></div>
+  </div>
+</section>
+
+<section id="ch2" class="ch5">
+  <p class="cq">Chapter 2</p>
+  <h2>How did they do it?</h2>
+  <p class="ans">Not by being cheapest. They redesigned how the machine is sold, financed, serviced and made. Each move can be copied, and most are cheaper for incumbents to copy than they were for the Chinese firms that made them first.</p>
+  <div class="pairs">
+    <div class="p"><b>Get in</b><span>1. Enter through a narrow beachhead, then broaden<br>6. Use electrification as the entry wedge</span></div>
+    <div class="p"><b>Win the sale</b><span>2. Treat customer credit as part of the product<br>3. Price just enough, then invest in the lifecycle</span></div>
+    <div class="p"><b>Stay</b><span>4. Localise plants, then export from the host<br>5. Turn local-content and investment rules into an advantage</span></div>
+  </div>
+  <p class="prose small">The six labels are as approved; only the grouping is new. Each move gets four short beats: what they did, one example, where it stops working, and what others can copy.</p>
+  <div class="secs5">
+    <div class="sec5"><span class="n">2.1</span><div class="t"><b>Get in</b><span>SANY won half of India's long-reach excavator niche, then used the dealers it built to sell everything else. Chinese forklift makers arrived just as buyers switched to electric. Limit: where machines work hardest, buyers go back to brands they trust.</span></div><div class="e"><i>Evidence</i>SANY India; electric-forklift import shares (60–69%); Tata Hitachi's recovery</div></div>
+    <div class="sec5"><span class="n">2.2</span><div class="t"><b>Win the sale</b><span>Small contractors cannot borrow from banks, so Chinese makers financed them. SANY went from a 2017 lender agreement to its own licensed finance company in Indonesia in 2026. Prices sat only 0–10% below the competition, and the investment went into parts and repair. Limit: credit-led sales are exposed in a downturn.</span></div><div class="e"><i>Evidence</i>India's crane case; SANY Indonesia; United Tractors' parts and service income<i>Exhibit</i>3. SANY's finance story</div></div>
+    <div class="sec5"><span class="n">2.3</span><div class="t"><b>Stay</b><span>Four Chinese makers build in India, and new plants opened in Indonesia and Thailand in 2025–26. Local plants also earn access to government buying under local-content rules. Limit: plants depend on trade policy, and announced plants are not always real production.</span></div><div class="e"><i>Evidence</i>Plant list; Indonesia's local-content credit; India's investment rules<i>Exhibit</i>4. The moves over time</div></div>
+  </div>
+</section>
+
+<section id="ch3" class="ch5">
+  <p class="cq">Chapter 3</p>
+  <h2>Where is it heading next?</h2>
+  <p class="ans">Into the machines factories buy, because Chinese factories abroad bring Chinese machines with them, and then into robots. Equipment bought off the shelf through distributors moves more slowly, on price first. How a product is bought decides how long incumbents have before the full Chinese system arrives.</p>
+  <div class="secs5">
+    <div class="sec5"><span class="n">3.1</span><div class="t"><b>How a product is bought sets the pace</b><span>The three kinds of buyer, and where each product stands: the year China overtook Japan, and which of the six moves are already visible.</span></div><div class="e"><i>Evidence</i>Trade series 2015–2025; company evidence<i>Exhibit</i>5. Where each product stands</div></div>
+    <div class="sec5 new"><span class="n">3.2</span><div class="t"><b>Machines for factories follow Chinese factories</b><span>When Chinese manufacturers build plants in Thailand, Vietnam or Indonesia, they buy the machines they know. Haitian, the largest maker of plastic-moulding machines, says so in its own results. China's share of these imports rose from 24% to 60% in ten years, and Japan's fell from 38% to 16%. Service and local plants follow fast. Trade duties follow fast too: India taxed Chinese laser cutters in 2023 and plastic-moulding machines in 2025.</span></div><div class="e"><i>Evidence</i>Haitian, Yizumi, Bodor; India's trade-remedy findings and duties<i>Exhibit</i>6. Factory machines: China vs Japan, 2015–2025</div></div>
+    <div class="sec5 new"><span class="n">3.3</span><div class="t"><b>Robots: the same path, one step behind</b><span>Robots are the next machine factories buy, and they are taking the same route. China became a net exporter of robots in 2025, and in the same year overtook Japan as the main supplier in all four markets with data. India, for example, went to 34% Chinese against 30% Japanese. Chinese robot makers' own businesses abroad are still small, so the share is moving through hardware sales, local partners and installers rather than Chinese-owned networks. That is where "Get in" stands; "Win the sale" and "Stay" have not arrived yet. Warehouse robots are the exception, sold worldwide from the start, and get one paragraph.</span></div><div class="e"><i>Evidence</i>China customs; import data; Estun's falling overseas share; a Thai robot joint venture; Thailand's robot-parts cluster; Fanuc's shift to the US; Geek+<i>Exhibit</i>7. Robots: China vs Japan by country, 2019 and 2025</div></div>
+    <div class="sec5"><span class="n">3.4</span><div class="t"><b>Off-the-shelf equipment moves on price first</b><span>Compressors and pumps are bought through distributors, and China's share is rising mostly through low-priced, often unbranded imports. Chinese brands have little local presence yet. Incumbents are answering with cheaper second ranges: ELGi launched one in 2026 on its own separate dealer network.</span></div><div class="e"><i>Evidence</i>Import shares; Kaishan India's small sales; ELGi's calls; Atlas Copco's Chinese brands</div></div>
+    <div class="sec5"><span class="n">3.5</span><div class="t"><b>The window, and our view to 2030</b><span>For each kind of buyer: how far Chinese firms have got, what comes next, and how long incumbents have to act. The approved "our view by category" table moves here and gains rows for factory machines and robots. It also notes which moves do not travel, such as customer credit outside heavy equipment.</span></div><div class="e"><i>Evidence</i>The dossiers' graded findings</div></div>
+  </div>
+</section>
+
+<section id="ch4" class="ch5">
+  <p class="cq">Chapter 4</p>
+  <h2>What should you do about it?</h2>
+  <p class="ans">The playbook has limits, and incumbents are already learning from it. Every reader has a first move, and five signs will show how fast the next products move.</p>
+  <div class="secs5">
+    <div class="sec5"><span class="n">4.1</span><div class="t"><b>Where the playbook breaks</b><span>The six approved failure modes in one table. Two show where incumbents hold: buyers return where uptime matters, and a loyal installed base holds. Four show where Chinese firms stumble: trade cases, loss-making acquisitions, dealers outgrowing parts supply, and price wars at home. The trade cases now include India's duties on factory machines.</span></div><div class="e"><i>Evidence</i>Tata Hitachi; Thai excavators; India's duties; Efort; Neta</div></div>
+    <div class="sec5"><span class="n">4.2</span><div class="t"><b>Incumbents are already copying it</b><span>Three responses: cheaper second brands (ELGi, United Tractors, Jungheinrich), trade duties pursued by incumbents with local plants, and retreat to premium segments (Volvo, Fanuc).</span></div><div class="e"><i>Evidence</i>Company statements; India's case records</div></div>
+    <div class="sec5"><span class="n">4.3</span><div class="t"><b>Your first move</b><span>One line for each of the six readers: global incumbents; Indian and ASEAN champions; dealers; financiers; Chinese OEMs planning their next market; policymakers. Full action lists go to the appendix.</span></div><div class="e"><i>Exhibit</i>8. Actions by reader</div></div>
+    <div class="sec5"><span class="n">4.4</span><div class="t"><b>Five things to watch</b><span>China's share of robot imports; India's next trade-duty decisions; further maker-owned finance companies in Indonesia; Komatsu's share; and the electric share of China's equipment exports.</span></div><div class="e"><i>Exhibit</i>9. What to watch, with thresholds</div></div>
+  </div>
+  <p class="prose small"><b>Conclusion: a playbook open to every firm.</b> The approved argument, plus the window: how long incumbents have depends on who their buyers are.</p>
+</section>
+
+<section id="ex">
+  <h2>Exhibits (9)</h2>
+  <div class="tw"><table>
+    <thead><tr><th class="n">No.</th><th>Exhibit</th><th style="width:28%">Built from</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Where China gained, by country and product, 2019 → 2024</td><td>v1 heat map</td></tr>
+      <tr><td class="n">2</td><td>The timeline: sales at home and abroad, and the two turns</td><td>New</td></tr>
+      <tr><td class="n">3</td><td>SANY's finance story in Indonesia</td><td>v1, corrected</td></tr>
+      <tr><td class="n">4</td><td>The moves over time</td><td>v1, updated</td></tr>
+      <tr><td class="n">5</td><td>Where each product stands: the year China overtook Japan, and which moves are visible</td><td>New</td></tr>
+      <tr><td class="n">6</td><td>Factory machines: China vs Japan, 2015–2025, with India's duty dates</td><td>New</td></tr>
+      <tr><td class="n">7</td><td>Robots: China vs Japan by country, 2019 and 2025</td><td>New</td></tr>
+      <tr><td class="n">8</td><td>Actions by reader</td><td>v1, simplified</td></tr>
+      <tr><td class="n">9</td><td>What to watch, with thresholds</td><td>v1, cut to five</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="app">
+  <h2>Appendices</h2>
+  <ul class="prose">
+    <li><b>A. Country profiles:</b> India, Indonesia, and Thailand with Vietnam and Malaysia. The crane case, Komatsu's share series and the Thai excavator counter-case live here.</li>
+    <li><b>B. Product profiles:</b> factory machines, robots, off-the-shelf equipment, and a short note on components (gearboxes, motors, hydraulics). This is where the depth of the evidence lives.</li>
+    <li><b>C. Actions in full</b> and partner checks</li>
+    <li><b>D. Method:</b> the five tests, evidence grades, how the timeline and "overtook Japan" years are dated, data limits, exchange rates</li>
+    <li><b>E. Glossary:</b> every acronym, defined once</li>
+    <li><b>F. Trade data</b></li>
+  </ul>
+</section>
+
+<section id="moved">
+  <h2>What moved, and why</h2>
+  <div class="tw"><table>
+    <thead><tr><th style="width:34%">In v4</th><th>In v5</th></tr></thead>
+    <tbody>
+      <tr><td>Four phase names (Probe, Beachheads, Push, Embed)</td><td>A three-stage timeline in plain words</td></tr>
+      <tr><td>Crossover clock, graded grid, phase table</td><td>One exhibit: where each product stands</td></tr>
+      <tr><td>Five or six product groups</td><td>Three kinds of buyer, with robots as their own section inside factory buyers</td></tr>
+      <tr><td>Components, warehouse robots as sections</td><td>A paragraph and the appendix</td></tr>
+      <tr><td>A "reach" line under each learning</td><td>Moved to Chapter 3, so each fact is told once</td></tr>
+      <tr><td>Ten signposts; 12 exhibits</td><td>Five things to watch; 9 exhibits</td></tr>
+      <tr><td>Indonesia brand chart, Thai counter-case chart</td><td>One sentence each in the text; detail in Appendix A</td></tr>
+      <tr><td>Industry terms and codes in the text</td><td>Defined once or moved to the glossary</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="status">
+  <h2>Where we are</h2>
+  <div class="lists">
+    <div class="panel"><h3>Done</h3><ul class="small">
+      <li>Approved text for the original 15 chapters, and Word draft v1</li>
+      <li>Decisions settled; four-chapter structure and central question agreed</li>
+      <li>Evidence build: trade data on 36 products, five evidence dossiers, India's trade cases</li>
+      <li>Outline simplified (this page)</li>
+    </ul></div>
+    <div class="panel"><h3>Next</h3><ul class="small">
+      <li>Your sign-off on this outline</li>
+      <li>Short evidence top-up (Indonesia's 2025 robot jump; primary checks for Haitian and Hengli; coal quota; India's pumps rule; unreachable price pages)</li>
+      <li>Write Chapters 1 and 3, shown next to the approved text; then the rest</li>
+      <li>Rebuild the 9 exhibits, build Word draft v2, run the full checks with an independent reviewer</li>
+    </ul></div>
+  </div>
+</section>
+</div>
