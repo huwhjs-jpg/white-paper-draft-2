@@ -1,0 +1,239 @@
+# China Playbook — Decisions and fix log, batch 3 (2 Oct 2026)
+
+Everything decided, corrected or moved while writing the v2 chapters on 2 Oct 2026. Decisions marked *provisional* were adopted after the user said "proceed" and still need explicit sign-off; each is easy to reverse.
+
+## Top-up decisions (apply across the paper)
+
+- **A. Thai excavators (provisional).** Do not say "Japanese brands held Thai excavators". SANY Thaiyont reports it was Thailand's top excavator seller in 2020 (1,600 units) and 2021 (1,840 units, 30.4%) (N41, page read). China's import share was about a third in 2015 and 2019 and 42% in 2025. Thailand verdict unchanged (structural in four of five categories). Failure mode 2 is evidenced mainly with India.
+- **B. Indian excavator asking prices dropped from Learning 3 (provisional).** TractorJunction lists SANY SY215C at INR 41–43 lakh against INR 74–76 lakh for Komatsu PC210 (pages read), too wide and too source-dependent to support "inside the incumbents' range". Learning 3 rests on DGTR 0–10% crane undercutting, the INAPROC gap (SANY Rp2.10bn against Komatsu Rp2.25bn incl. VAT, N40, search-verified) and SANY's 2021 price cut.
+- **C. Flow rewrite (approved by user, "Proceed").** Chapter 1 opens on the Komatsu puzzle; the "overtook Japan" measure moved to Chapter 3; Chapter 2 told as three stories with lesson names in bold and no numbers in the text; all "where it stops" material moved to Chapter 4.1; the 2030 view table moved from Chapter 3 to Chapter 4.4 and merged with the five signs.
+- **D. Chapter 4 title (provisional).** "What can each reader do?" replaces the approved "What should you do about it?", to keep the house rule of "we", never "you". Reader advice no longer uses "your". Reversible in one line.
+
+## Chapter 1. What happened?
+
+### For the user's decision
+
+- **Rewritten for flow (2 Oct, after your go-ahead).** The chapter now opens with a puzzle instead of a framework: Komatsu losing share in Indonesia while coal output was near its record. The "year China overtook Japan" measure has moved to Chapter 3, where it is first needed. The list of new plants has moved to Chapter 2 (told once). The chapter ends with the central question and a hand-off to Chapter 2. The facts and verdict are unchanged.
+- **Thai excavators: stop calling them a case where Japanese brands held.** SANY's Thai distributor reports it was Thailand's top excavator seller in 2020 and 2021 (1,840 units and a 30.4% share in 2021; a company claim, page read 2 Oct 2026). China already supplied about a third of Thai excavator imports in 2015 and 42% in 2025. The flat 2019–24 import share therefore probably means Chinese brands arrived earlier, not that Japan held. This chapter now says only that China's share "barely moved". The Thailand verdict (structural in four of five categories) is unchanged, because it rests on import data. Your call: agree to re-evidence failure mode 2 ("A loyal installed base holds") mainly with India (Tata Hitachi's dealer base, Indian pumps) when we write Chapter 4, and to drop "Japanese brands held Thai excavators" from the executive summary.
+- **Approved text moved out of the body (please confirm).** Three blocks of v1 Chapters 1–3 are cut from the body under the v5 word budget. (1) The overseas-revenue league table (Zoomlion 58.56%, XCMG 48.2%, LiuGong 47.65%, Heli 44%, Hangcha 43.38%) and SANY's 31.7% overseas margin go to Appendix B. (2) Of the nine 2026 policy events, the trade agreements (UK–India in force, EU–India awaiting signature), the US Section 122 surcharge and the US excess-capacity investigation go to Appendix A, so they are no longer in the body or among the five signs to watch. (3) The five tests, Japan's and Korea's losses by country, Vietnam's mirror data and the Komatsu and Hitachi share chart go to Appendices A and D, as v5 sets out.
+- **The state-support paragraph has no home in v5.** v1 Chapter 3 noted India's 30–110% dumping margins on cranes, the EU's anti-subsidy duties on access equipment, and that subsidies explain why Chinese firms could push abroad but not how they won customers. We propose one sentence of it in Appendix D (method), with the crane margins kept in Appendix A. Say if you want it back in Chapter 1.
+
+### What changed from the approved v1 text, by section
+
+**1.1** (v1 sources: exec intro; c2 intro; c2 · China's share of imports rose almost everywhere)
+- Kept the two approved headline numbers (Indonesia excavators 33% → 75%; India cranes 35% → 93%) and added the third v5 number, robots passing Japan in 2025.
+- Kept the 18-of-19 and 12-over-half findings and the heat map (now Exhibit 1). Forklift and excavator patterns shortened to two sentences; crane value detail moves to Appendix A.
+- The "year China overtook Japan" measure is no longer introduced here; it now appears in Chapter 3, where it is first used.
+- Data-limits paragraph shortened; the Indian 95% caution kept. Japan's and Korea's losses by country (v1 2.2) move to Appendix A.
+
+**1.2** (v1 sources: c1 · Chinese OEMs now earn half; c1 · A collapse at home; c1 · The second layer; c1 · The rules reset)
+- The chapter now opens with the Komatsu puzzle (share lost while coal output was near its record), which sets up the whole paper.
+- Restructured around the v5 three-stage timeline (exporting the surplus; going overseas-first; owning the system). The old phase names are not used.
+- Turning point 1 is now dated 2022 at company level (SANY 23% → 45.7%), with 2023 as the year exports passed home sales in units (correction 5).
+- New: CCMA series back to 2016, showing exports at 7–11% of units to 2020.
+- The overseas-revenue league table and the Indonesia US$882m fact move to Appendices B and A. SANY's 63% is kept. The list of new plants is told once, in Chapter 2; here only the finance licence marks the second turn.
+- The nine 2026 policy events become one paragraph: India's three moves, Indonesia's local-content credit and the US forced-labour tariffs. The rest moves to Appendix A (see "For your decision").
+
+**1.3** (v1 sources: exec intro; c2 · In Indonesia, company disclosures; c3 intro; c3 · Five tests; c3 · Indonesia: share fell; c3 · India: Chinese gains; c3 · What about state support?; c3 · Verdict)
+- Kept the Komatsu argument (29% → 20%, about 750 fewer machines in a market about 4,400 units larger, record coal) and the Hexindo point.
+- Kept the verdict word for word in substance: structural in India and Indonesia, and in four of five Thai categories; cycles amplified, did not cause.
+- The five tests are named but move to Appendix D; the India test evidence (sales boom, highway cycle) moves to Appendix A; the Indonesia brand chart becomes a sentence.
+- New: "China gained where mining plays no part" now includes factory machines, pointing to Chapter 3.
+- Thai excavators worded neutrally ("barely moved") pending decision 1.
+- State-support paragraph cut (decision 3).
+
+**1.4** (v1 sources: c3 · Verdict; c5 · Where it stops working; c1 · The question for this paper)
+- New section, built from the v1 downturn paragraph and Learning 2's limit.
+- Coal updated from the top-up: quotas first cut to about 600 Mt, slow work-plan approvals, lenders waiting on approval, and the ministry's projection of about 720 Mt (a projection, not a quota).
+- Highway pace: 25 km a day in FY26 kept; 21 km a day now labelled as the FY27 expectation.
+- The approved central question closes the chapter, as the benchmark checklist asks, with a pointer to Chapters 2–4. "OEM" is defined here once.
+
+### Fix log
+
+| No. | What was fixed | Source |
+|---|---|---|
+| C1-1 | Turning point 1 dated to 2022 at company level; 2023 kept as the year exports passed home sales in units (brief §6, correction 5). | SANY FY2022 results, N5; CCMA via refs 49–50 |
+| C1-2 | Crane duties: "not imposed within the three months its rules allow"; the word "pending" is not used (locked fix F1). The lapse is dated to 2025, not described as a 2026 event. | Refs 37, 14; Rule 18(1) |
+| C1-3 | US 10% and 12.5% tariffs attributed to the forced-labour trade action effective 24 Jul 2026 (locked fix F2). | Ref 67 |
+| C1-4 | "About 720 Mt" written as the energy ministry's projection of 2026 output, not a quota; the quota is described as first cut to about 600 Mt and then revised (correction 9, top-up item 4). | Ref 88; N7, N9 |
+| C1-5 | Final 2025 coal output confirmed at 817 Mt (ESDM 817.48 Mt); an earlier January estimate of 790 Mt is superseded. | N6 |
+| C1-6 | Highway pace: 25 km a day is FY26; 21 km a day is the FY27 expectation (correction 10). | Ref 94 (CareEdge, 25 Sep 2026) |
+| C1-7 | Thai excavators: "Japan held" wording removed; neutral wording pending your decision. | Ref 38; SANY Thaiyont claim (search-verified) |
+| C1-8 | Hexindo: v1 said its share "barely moved" in Chapter 3 but "followed a similar path" in Chapter 2. We use the Chapter 2 wording, which matches the 50% → 37% combined-share calculation. To be rechecked against refs 82–83 for Appendix A. | Refs 82, 83 |
+| C1-9 | XCMG Balikpapan described as a base for repairing and rebuilding mining-machine parts, matching ref 24 (overhaul and remanufacturing of components). | Ref 24 |
+| C1-10 | "Five plants and service bases since November 2025" checked against the list: Heli Rayong, Hangcha Chonburi, LiuGong Karawang, XCMG Weda Bay, XCMG Balikpapan. | Refs 24, 29–32 |
+| C1-11 | United Tractors' Jan–Aug 2026 Komatsu figures (2,689 units, −21%; large mining 436, −49%; locked fix F6) move to Appendix A unchanged. The chapter keeps only the 2027 recovery expectation. | Refs 90, 97 |
+| C1-12 | SANY 2022: v1 research said its overseas margin beat its home margin "for the first time". The release says only that the overseas gross margin (26.4%) was higher than in China (21.9%), so "for the first time" is dropped. | N5 (page read) |
+| C1-13 | Exports-to-2020 share stated as 7–11% of units, from CCMA 2016–2020. The 2015 share (10.2%) is not used, because the 2015 absolute figures are unsourced. | N2–N4, ref 49 |
+
+## Chapter 2. How did they do it?
+
+### For the user's decision
+
+- **Rewritten for flow: three stories instead of six forms.** Each pair ("getting in", "winning customers", "staying") is now told as one story following the companies. The six lessons appear in bold by their approved names, without numbers, so the reading order no longer jumps from 1 to 6. Each pair ends with a single "What others can copy" note. The six "Where it stops" passages have moved to the start of Chapter 4, where they sit with the failure modes instead of repeating them.
+- **The crane-credit example belongs to XCMG, not to "Chinese exporters" in general.** Reading India's crane findings directly: the regulator's "very long and exceptional credit period of as long as three years ... which is not normal" refers to XCMG's related exporter (paras 47 and 134). It is used to adjust export prices, not named as a cause of injury. The "up to three years" claim for all Chinese suppliers was the Indian industry's own market intelligence. Chapter 2 now says this. Knock-on: v1's executive-summary line for Learning 2 ("found Chinese exporters giving related importers up to three years' credit") will be reworded when we write the summary.
+- **Indian excavator asking prices are dropped (decision B from the top-up).** TractorJunction now lists SANY's 21-tonne excavator at INR 41–43 lakh against INR 74–76 lakh for Komatsu's PC210, so "inside the incumbents' range" no longer holds for India. Learning 3 now rests on the regulator's 0–10% undercutting on cranes, Indonesia's e-catalogue (about 7% apart) and SANY's 2021 price cut. The learning is unchanged.
+- **Cut from the body: "Why the beachhead works", the mixed-channels supporting move and the Thai EV 3.5 case.** The three-feature explanation of beachheads (v1 4.2) is folded into one sentence. "Building mixed channels" (v1 box: SANY India's company-owned and dealer outlets) moves to Appendix C's partner checks. Thailand's EV 3.5 obligations and Neta's failure now sit in Chapter 4 (failure mode 5).
+
+### What changed from the approved v1 text, by section
+
+**2.1** (v1 sources: p0:1 intro; c4 · What Chinese OEMs did; c4 · What transfers; c9 · What Chinese OEMs did; c9 · Construction equipment is at the start; c9 · What transfers)
+- Learnings 1 and 6 are grouped as "Getting in" and told as one story; the labels are unchanged, in bold, without numbers. The four-beat template is replaced by narrative plus one "What others can copy" note per pair; the "where it stops" material is in Chapter 4.1.
+- SANY India: "opened its plant at Chakan in 2007" is softened to "began building in India at Chakan", because the 2007 date is an MoU and the Rs1,000 crore plant dates from 2012 (fact-check batch 2).
+- The crane case box is cut here; India's crane case is told in Learning 3 and Appendix A.
+- Following Chinese customers abroad is reduced to one sentence pointing to Chapter 3, as v5 asks.
+- Electrification: Vietnam and Malaysia shares and the regional battery-price premiums move to Appendix B; XCMG's 23.6% new-energy growth (cited source does not show it) is dropped. Weda Bay is described as "XCMG's first overseas new-energy factory" (correction 4).
+- Jungheinrich's AntOn moves to Chapter 4.2 (each fact told once).
+- v1's Part II note rejecting "components first" moves to Appendix B, using the HKEX figures for Estun (robots +31.91%, components −8.99%).
+
+**2.2** (v1 sources: c5 · What Chinese OEMs did; c5 · How incumbents have responded; c5 · What transfers; c6 · What Chinese OEMs did; c6 · Lifecycle revenue; c6 · What transfers)
+- Learnings 2 and 3 are grouped as "Win the sale".
+- SANY's 2017 deal is now an MoU signed by its official distributor, PT Sany Perkasa (correction 1; distributor status from Sany Perkasa's own site, v1 ref 92).
+- Crane credit is attributed to XCMG and described as an export-price adjustment, not a cause of injury (correction 2; filing read).
+- SANY India's used-machine auction portal is cut (Appendix C).
+- Price: Indian listings dropped; Indonesian e-catalogue figures are now two named listings rather than medians.
+- Lifecycle kept: United Tractors 37%, XCMG Balikpapan, XCMG aftermarket growth, service promises; the 24-hour completion promise and SANY's parts count are trimmed.
+
+**2.3** (v1 sources: c7 · What Chinese OEMs did; c7 · Why build locally; c7 · How incumbents have responded; c7 · What transfers; c8 · Indonesia now rewards; c8 · India has moved; c8 · What transfers; box intro)
+- Learnings 4 and 5 are grouped as "Stay".
+- SANY Chakan: "more than INR 1,000 crore invested", and the 1,200 machines shipped abroad are attributed to SANY India as a company, not to the plant (correction 3).
+- The five plants and service bases since November 2025 are listed with dates, matching Exhibit 4.
+- US forced-labour tariffs and the EU crane case move to Chapter 1 and Chapter 4; the India FY26 export figure moves to Appendix A.
+- Indonesia's local-content score is now described as a combined score (local content plus company-benefit weighting); SANY's listing shows 0% and is marked as an import.
+- India's GeM listing claim (unverifiable) is replaced by the verifiable July 2020 tender-registration rule.
+- New "where it stops": announced plants are not always production plants (Haitian, Chapter 3).
+
+### Fix log
+
+| No. | What was fixed | Source |
+|---|---|---|
+| C2-1 | MNC Leasing and PT Sany Perkasa signed a memorandum of understanding (MoU) in Dec 2017, not a financing agreement. Sany Perkasa is described as SANY's official distributor, from its own site (correction 1). | Refs 92, 103, 104; fact-check batch 2 |
+| C2-2 | Crane case: the three-year "not normal" credit is XCMG's related exporter's, and the regulator treats it in the export-price calculation; the chapter no longer says the damage came from long credit (correction 2). | Ref 14, paras 47, 134 (filing read) |
+| C2-3 | Crane undercutting of 0–10% in the investigation period (April 2023–March 2024) confirmed in the findings' table. | Ref 14, para 70 (filing read) |
+| C2-4 | SANY Chakan: "more than INR 1,000 crore invested"; the 1,200 machines exported in 2024 are SANY India's, not the plant's (correction 3). | Refs 22, 98 |
+| C2-5 | Weda Bay: "XCMG's first overseas new-energy factory", not its first Indonesian plant (correction 4). | Ref 30 |
+| C2-6 | XCMG's new-energy revenue growth of 23.6% is dropped: the cited annual report does not show it. | Fact-check batch 2 on ref 32 |
+| C2-7 | Indian excavator asking prices dropped (decision B). The Indonesian e-catalogue gap is now two named listings, search-verified, because the site cannot be read automatically. | N40; TractorJunction pages read 2 Oct 2026 |
+| C2-8 | Indonesia's 51.2% is the combined local-content score (TKDN 36.2% plus BMP 15), the figure tested against the 40% bar; SANY's listing shows 0% and is marked as an import. | N40; ref 33 |
+| C2-9 | The GeM "no Chinese brand listed" claim is replaced by the July 2020 tender-registration rule, which is verifiable. | Ref 126 |
+| C2-10 | Electric forklift shares quoted only for 2024 and three markets (India, Indonesia, Thailand: 60–69%), matching the v5 outline; Vietnam's 2023 figure moves to Appendix B. | Refs 10–12 |
+
+## Chapter 3. Where is it heading next?
+
+### For the user's decision
+
+- **Rewritten for flow: tools introduced where needed; one forward-looking ending.** The "year China overtook Japan" measure is now introduced here, not in Chapter 1. Section 3.5 is renamed "How much time each kind of buyer leaves" and ends the chapter. The "Our view to 2030" table has moved to Chapter 4, where it is paired with the five signs, so the paper has one forward-looking ending instead of two.
+- **Our view of the window for each kind of buyer.** Section 3.5 gives a time judgement for each kind of buyer: factories have "a few years at most"; for robots, incumbents have "until about 2030" to lock in installers and service; plant engineers have the longest window. These are our judgements from the crossover years and the pattern in factory machines, labelled "in our view". Agree, soften, or ask for ranges.
+- **Two new rows in the approved "our view by category" table.** Factory machines (new) and Robots (replacing v1's "Robotics and automation: inconclusive"). The "What would change it" column now points to the five v5 signs, not the eight v1 signposts. Signs that dropped out of the body (the battery-cost gap, Press Note 2 approvals, coal quotas, the US excess-capacity case) are no longer cited.
+- **Indonesia's 62% robot share is shown but not relied on.** Re-pulled from UN Comtrade: the jump is lumpy, with US$51m of the US$61m from China arriving in September to December 2025 and US$30m in October alone. That fits one or more large plant fit-outs. The headline "overtook Japan in all four markets" still holds on India, Thailand and Malaysia alone (China 37% against Japan 31% in 2025). We name BYD's Subang plant as a possible cause, marked unconfirmed. Say if you would rather leave the cause out.
+
+### What changed from the approved v1 text, by section
+
+**3.1** (v1 sources: c2 · Categories follow a common sequence)
+- Replaces v1's "category maturity ladder" (four equipment families) with the v5 three kinds of buyer.
+- The crossover years are new, from the 2015–2025 trade series (four markets). Machine tools are split, because machining centres have not crossed.
+- States the approved Chapter 3 qualifier: in the next products the same moves arrive in a different order, and the buyer decides the order.
+
+**3.2** (v1 sources: box intro; c12 · Chinese investment is changing)
+- New section. v1 could only call "following home-country customers" plausible (box). It is now evidenced by Haitian's own results statement and by trade gains where Chinese investment is heaviest.
+- Thai industrial-estate figure (6% → 17%) carried over from v1 Chapter 12.
+- Company plant claims are labelled, and the Haitian claim carries the regulator's caution (correction 15).
+- Adds India's two imposed duties (lasers 2023; plastic-moulding machines 2025) and the incumbent petitioners, which Chapter 4 uses again.
+
+**3.3** (v1 sources: c9 · Where it stops working)
+- New section on the 2025 turn: China's customs data and the importers' trade data.
+- Keeps v1's point that the home lead does not travel automatically (Estun's falling overseas share), now cited to the HKEX annual results.
+- Adds the routes in (the Thai joint venture with a local auto-parts maker; the BOI-approved parts cluster) and the incumbents' move to the US.
+- Warehouse robots get one box, as v5 asks. Efort moves to Chapter 4 (failure modes 4 and 6).
+
+**3.4** (v1 sources: c10 · Compressors, pumps and robots; c2 · China's share of imports rose almost everywhere)
+- Compressors and pumps now use the four-market 2015–2025 series rather than single-country 2019–24 shares.
+- Kaishan's small Indian sales against about US$500m of imports from China show that the flow is mostly unbranded.
+- ELGi: the low-cost range and its separate distributor network are kept. The "25–30% of Indian volume" management estimate is dropped from the body (correction 12).
+- New: Atlas Copco's Chinese brands, with Liutech's distributors in four ASEAN markets (top-up item 6).
+- ELGi's motor in-sourcing and Indian robot installs move out (Appendix B; robots to 3.3).
+
+**3.5** (v1 sources: c15 · Three paths)
+- The "three paths" scenarios are dropped from the body. They are replaced by a window for each kind of buyer, which now closes the chapter.
+- The approved "our view by category" table has moved to Chapter 4.4, with Factory machines added and the Robots row rewritten.
+- New: which moves do not travel (customer credit, except as subscription in warehouse robots), from the dossiers.
+
+### Fix log
+
+| No. | What was fixed | Source |
+|---|---|---|
+| C3-1 | Haitian's Indian plant is not presented as proof of local production; the regulator's record is quoted (correction 15). | N16 (paras 47(l), 54) |
+| C3-2 | Estun figures cited to the HKEX annual results, not the Sina AI summary (correction 13). v1 ref 86 is retired. | N22 |
+| C3-3 | Estun's segment growth differs between sources. v1's Part II introduction used robots +31.80% and components −8.72% (Sina); the HKEX results give +31.91% and −8.99%. Use the HKEX figures wherever the point reappears (Chapter 2 or Appendix B). | N22 |
+| C3-4 | Inovance's "about 6%" overseas share is labelled secondary (correction 11). Its primary statement on winning top customers in Vietnam is added. Open item: name the secondary source, or drop the 6%. | N23 |
+| C3-5 | Chinese suppliers' share of China's robot market: 55% in 2025, down from 57% (correction 6). | Ref 85 |
+| C3-6 | India compressors: the rise came mainly in 2024 (52.6%), and 2025 was 49.3% (correction 8). | Ref 71; N1 |
+| C3-7 | India rescinded the machinery Omnibus regulation; the pumps quality-control order is described as a draft, as no final notification was found (correction 7; top-up item 3). | Ref 57; N33 |
+| C3-8 | ELGi's 25–30% estimate is not used in the body. If it returns in Appendix B, it will be labelled a company estimate, not comparable with import shares (correction 12). | Refs 145–147 |
+| C3-9 | ELGi's low-cost range: "scheduled the launch for September 2026". The August call did not confirm that the launch had happened. | N34 |
+| C3-10 | Indonesia's 62% robot share flagged as unexplained; the headline rests on the other three markets (top-up item 1). | N1 |
+| C3-11 | India's laser duties: case opened Oct 2022; final findings 27 Sep 2023; duty imposed 22 Dec 2023, five years. Rates as notified. | N18 |
+| C3-12 | Chen Hsong's 27% applies to its Chinese plant; its Taiwan plant pays 39%. | N17 |
+| C3-13 | Plastic-moulding imports "from under 4% to 19% of Indian demand" attributed to the Indian producers who brought the case, as in the record. | N16 (para 106(t)) |
+| C3-14 | Thai industrial-estate share rounded from 17.06% to 17%. | Ref 135 |
+| C3-15 | Generator sets in Malaysia: the data-centre link is stated as unproven. | N1; evidence log |
+| C3-16 | Hai Robotics' Penang production site (Sep 2025) added. The dossier said warehouse robots had "no regional plants" (top-up item 10). | N29 |
+| C3-17 | Haitian's overseas share is 42.9% (RMB7,601.5m of RMB17,733.2m), as the HKEX announcement prints it, not 42.8%. The quote now uses the filing's English wording ("the global expansion of Chinese enterprises"). | N10 (filing read) |
+| C3-18 | India's laser case opened on 29 Sep 2022, not October 2022 (October was the press report). The final findings show imports from China at 78–83% of Indian demand from 2018-19 to 2021-22. | N39 (filing read) |
+| C3-19 | New: Haitian's annual report carries a provision of INR1,859m (RMB146m) for an Indian customs anti-dumping claim against its Indian unit, unchanged from 2024. | N38 (filing read) |
+| C3-20 | Indonesia's robot jump is shown to be lumpy (US$30m from China in October 2025). The three-market figure without Indonesia is 21% → 37% for China and 35% → 31% for Japan. | N1 (re-pulled) |
+| C3-21 | Atlas Copco: Liutech's own site shows dedicated product ranges for India and Southeast Asia. This replaces the distributor list, which the site no longer shows. | N36 (pages read) |
+| C3-22 | Hai Robotics: "with a manufacturing partner" dropped. The article confirms the Penang factory, not who runs it. | N29 (page read) |
+| C3-23 | Hengli is not used in the body. When it appears in Appendix B, its overseas share is about 19% (overseas sales RMB2,106m, +1.6%, against RMB8,750m at home), not "over 35%" (top-up item 5). | Hengli 2025 annual report, segment table (filing read) |
+
+## Chapter 4. What can each reader do?
+
+### For the user's decision
+
+- **Retitled and rewritten for flow.** Following your go-ahead, the chapter title is now "What can each reader do?", replacing the approved "What should you do about it?" to fit the house rule of using "we", never "you". The reader lines no longer say "your" either. The chapter opens with a short bridge. Section 4.1 now gathers the limits of each move that used to sit in Chapter 2, and the "limits Learning X" tags are dropped from the table. Section 4.4 merges our view to 2030 (moved from Chapter 3) with the five signs, and ties two of the signs back to the credit question raised in Chapter 1. Say if you want the original title back.
+- **Failure mode 2 ("A loyal installed base holds") is now evidenced with India, not Thai excavators.** The evidence is JCB's lead in India's backhoe loaders (34,632 registrations against LiuGong's 1,061 in FY26) and China's flat 32–39% share of Indian pump imports since 2015. Thai excavators get one cautious sentence, because SANY reports it was Thailand's top excavator seller in 2020–21 (decision A from the top-up).
+- **Thresholds for signs 1–3 are new and ours.** v5 kept the approved thresholds for Komatsu (above 25% for two quarters) and the electric share (above 5%). For the other three we propose: China above 50% of robot imports or a first Chinese robot service or assembly site; any Indian duty imposed on Chinese construction equipment; a second maker-owned finance licence in Indonesia. Change them if you prefer.
+- **Signposts dropped from the body.** Going from eight signposts to five removes the US excess-capacity investigation, the first Press Note 2 approvals, the EU–India agreement's entry into force and Indonesia's coal quotas. We propose listing them in Appendix A as "other dates to watch".
+
+### What changed from the approved v1 text, by section
+
+**4.1** (v1 sources: c13 intro; c13 · Where incumbents hold; c13 · Where Chinese entrants are exposed; c13 · What remains unproven; c5 · Where it stops working; c6 · Where it stops working; c7 · Where it stops working; c8 · Where it stops working)
+- The six failure-mode blocks become one table, split two and four as v5 sets out; the labels and the "limits" notes are unchanged.
+- Failure mode 2 is re-evidenced with India (backhoe loaders; pumps); Thai excavators get one cautious sentence.
+- Failure mode 3 now includes India's two imposed duties on factory machines.
+- New paragraph gathering the limit of each move (credit, resale value, machine data, plants, rules, electric), moved from Chapter 2 so it is told once.
+- The "limits Learning X" tags are dropped from the table, because the text no longer numbers the lessons.
+
+**4.2** (v1 sources: c4 · How incumbents have responded)
+- New section built from v1 4.3 and new evidence: second brands (ELGi, United Tractors, Jungheinrich AntOn moved from v1 Chapter 9, Atlas Copco), trade defence by incumbents with Indian plants, and retreat to premium (Volvo; Fanuc and Yaskawa).
+- Hexindo's move to the LANDCROS brand and Volvo's India assembly detail move to Appendix A.
+- Adds our view of what each response costs.
+
+**4.3** (v1 sources: c14 intro; c14 · Global incumbents)
+- One first move per reader, drawn from v1's 12-month actions. The full lists (five actions per reader, with horizon and learning tags) and the partner-check table move to Appendix C, as v5 sets out.
+- The champions' line merges two v1 actions (Press Note 2; local-content qualification), as in the v1 executive summary.
+
+**4.4** (v1 sources: c15 intro; c15 · Our view by category; c15 · Signposts to watch)
+- Merged with "Our view to 2030" (moved from Chapter 3), so the paper ends on one forward look: the view, then the signs that would change it.
+- Two signs (maker-owned finance companies; Komatsu's share) are tied back to the credit question raised in Chapter 1.
+- Eight signposts are cut to the five v5 names, each with its latest reading, a threshold and what it would mean.
+- The approved thresholds (Komatsu above 25% for two quarters; electric share above 5%) are kept.
+- The review rhythm (twice a year) is kept.
+
+### Fix log
+
+| No. | What was fixed | Source |
+|---|---|---|
+| C4-1 | Komatsu's latest share: 17% in Jan–Apr 2026. | Ref 81 |
+| C4-2 | Electric share of excavator exports written as 0.2% (135 of 73,295, H1 2026). | Ref 53 |
+| C4-3 | Failure mode 3: India's crane duties "recommended but not imposed" (locked fix F1); laser and plastic-moulding duties dated from the notifications. | Refs 37; N17, N18 |
+| C4-4 | Failure mode 2: Thai excavators no longer described as Japanese brands holding (top-up decision A). | Ref 38; N41 (page read) |
+| C4-5 | Efort figures kept as approved (RMB154.8m impairment; RMB497m loss; robot revenue −21.5%; margin −6.5 points). | Refs 44, 45, 157 |
+| C4-6 | Fanuc and Yaskawa US plants and Americas-versus-China sales are from a Korean news report, labelled as media. | N27 |
+| C4-7 | Bystronic's China-made lasers pay 30.16% in India (now DNE Laser for the Shenzhen entity, Amendment 04/2026). | N18 |
+
+## Front matter and conclusion (first drafts, 2 Oct 2026)
+
+- Executive summary, About this paper and Conclusion were drafted at the end of the session to make the draft read end to end. Not yet reviewed by the user.
+- The executive summary's Learning 2 example no longer says "Chinese exporters giving related importers up to three years' credit": the DGTR finding is specific to XCMG's related exporter.
+- The Thai line ("Japanese brands held Thai excavators") is removed from the summary's limits paragraph (decision A).

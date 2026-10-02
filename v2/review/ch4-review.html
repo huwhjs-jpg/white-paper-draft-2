@@ -1,0 +1,265 @@
+<title>Chapter 4 Review</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"><style>/* Layout: a reading desk. One column of decisions, then each section as a pair: new text (wider, primary) beside the approved v1 text (narrower, muted), stacking on phones. */
+:root{
+  --paper:#F6F8FB; --sheet:#FFFFFF; --ink:#0D1E43; --text:#23304A; --muted:#5B6782; --rule:#D6DEEA;
+  --china:#0B6FD9; --china-bg:#E8F1FC; --japan:#C07A00; --japan-bg:#FBF1DE; --v1bg:#F0F2F6;
+  --decide:#9A3412; --decide-bg:#FDF0E8;
+  --serif:"Source Serif 4", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E1524; --sheet:#151E31; --ink:#E6ECF7; --text:#CBD4E6; --muted:#8F9BB4; --rule:#2A3650;
+  --china:#3383E0; --china-bg:#16294A; --japan:#B97A12; --japan-bg:#2E2414; --v1bg:#1A2236;
+  --decide:#F0A070; --decide-bg:#2E1E16; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1524; --sheet:#151E31; --ink:#E6ECF7; --text:#CBD4E6; --muted:#8F9BB4; --rule:#2A3650;
+  --china:#3383E0; --china-bg:#16294A; --japan:#B97A12; --japan-bg:#2E2414; --v1bg:#1A2236;
+  --decide:#F0A070; --decide-bg:#2E1E16; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
+a{color:var(--china)} a:focus-visible{outline:2px solid var(--china);outline-offset:2px}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);text-wrap:balance;margin:0}
+.top{display:grid;gap:14px;padding-bottom:22px;border-bottom:1px solid var(--rule)}
+.kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+h1{font-size:clamp(28px,4vw,40px);line-height:1.15}
+.answer{font-family:var(--serif);font-size:19px;line-height:1.5;color:var(--ink);max-width:62ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin:4px 0 0}
+.meta div{min-width:0} .meta dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.meta dd{margin:2px 0 0;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:500}
+.meta dd span{color:var(--muted);font-weight:400;font-size:13px;margin-left:4px}
+.toc{display:flex;flex-wrap:wrap;gap:6px}
+.toc a{font-size:13px;text-decoration:none;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--sheet)}
+.decide{margin-top:26px;background:var(--decide-bg);border:1px solid var(--rule);border-radius:6px;padding:18px 20px}
+.decide h2{font-size:22px;color:var(--decide)} .lede{color:var(--muted);max-width:75ch;margin:6px 0 10px}
+.decide ol{margin:0;padding-left:22px;display:grid;gap:10px} .decide li p{margin:0;max-width:85ch}
+.dh{font-weight:600;color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:30px 0 4px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.lnew::before{background:var(--china)} .lold::before{background:var(--muted)}
+.pair{margin-top:26px;padding-top:18px;border-top:2px solid var(--ink)}
+.sechead{display:flex;gap:12px;align-items:baseline}
+.sechead .num{font-family:var(--mono);color:var(--china);font-size:15px}
+.sechead h2{font-size:23px}
+.change{margin:10px 0 14px;font-size:14px;color:var(--text)}
+.chl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 2px}
+.change ul{margin:0;padding-left:18px;display:grid;gap:2px;max-width:100ch}
+.cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:minmax(0,1fr)}}
+.col{min-width:0;border-radius:6px;padding:16px 18px}
+.col.new{background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--china)}
+.col.old{background:var(--v1bg);font-size:13.5px;color:var(--muted)}
+.colh{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.col.new p,.col.new li{font-family:var(--serif);font-size:16.5px;line-height:1.6;color:var(--text)}
+.col p{margin:0 0 10px} .col ul{padding-left:20px;margin:0 0 10px} .col li{margin-bottom:6px}
+.col b{color:var(--ink)}
+sup{font-family:var(--mono);font-size:10px;color:var(--china);margin-left:1px}
+.col.old sup{color:var(--muted)}
+.exm{margin:12px 0;padding:10px 12px;border:1px dashed var(--china);border-radius:4px;background:var(--china-bg);display:grid;gap:2px}
+.exn{font-family:var(--mono);font-size:12px;color:var(--china)} .ext{font-family:var(--serif);color:var(--ink);font-weight:600}
+.exs{font-size:12px;color:var(--muted)}
+.exref{font-size:12.5px;font-style:italic}
+.case{margin:12px 0;padding:12px 14px;background:var(--japan-bg);border-left:3px solid var(--japan);border-radius:0 4px 4px 0}
+.caseh{font-family:var(--sans)!important;font-weight:600;font-size:14px!important;color:var(--ink)!important;margin-bottom:4px!important}
+.col.old .case{background:transparent;border-left-color:var(--rule)}
+.inbrief{font-style:italic;margin-bottom:10px}
+.inbrief b{font-style:normal;margin-right:6px}
+.v1src+.v1src{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule)}
+.v1h{font-family:var(--mono);font-size:11.5px;color:var(--ink);margin-bottom:6px!important}
+.nov1{font-style:italic}
+.tw{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-family:var(--sans)}
+th,td{text-align:left;vertical-align:top;padding:7px 9px;border-bottom:1px solid var(--rule)}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.col.new td{font-family:var(--sans);font-size:13.5px}
+td.n{font-family:var(--mono);white-space:nowrap;color:var(--china)}
+.fixes,.sources{margin-top:40px;padding-top:18px;border-top:2px solid var(--ink)}
+.fixes h2,.sources h2{font-size:24px} .sources h3{font-size:17px;margin-top:18px}
+.fixes table,.sources table{background:var(--sheet)}
+.v1refs{list-style:none;padding:0;margin:8px 0;display:grid;gap:4px;font-size:13px;color:var(--muted)}
+.v1refs .n{display:inline-block;min-width:2.6em;font-family:var(--mono);color:var(--ink)}
+footer{margin-top:36px;font-size:12.5px;color:var(--muted)} code{font-family:var(--mono);font-size:12px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+.col.new .colh{font-family:var(--sans);font-size:11px;line-height:1.4}
+.v1refs li,td,.col p{overflow-wrap:anywhere}
+</style>
+<div class="wrap">
+<header class="top"><p class="kicker">The China Playbook for Emerging Asia · Batch 3 review · 2 October 2026</p>
+<h1>Chapter 4. What can each reader do?</h1>
+<p class="answer">The playbook has limits, and incumbents are already learning from it. Every reader has a first move, and five signs will show how fast the next products move.</p>
+<dl class="meta"><div><dt>Words</dt><dd>978 <span>plus 692 in tables; target about 1,500</span></dd></div><div><dt>Exhibits</dt><dd>2 (Exhibits 8 and 9)</dd></div><div><dt>Approved text drawn on</dt><dd>v1 Chapters 4, 13, 14 and 15</dd></div><div><dt>Fixes logged</dt><dd>7</dd></div></dl>
+<nav class="toc"><a href="#decide">For your decision</a><a href="#s4-1">4.1</a><a href="#s4-2">4.2</a><a href="#s4-3">4.3</a><a href="#s4-4">4.4</a><a href="#fixes">Fix log</a><a href="#sources">Sources</a></nav></header>
+<section id="decide" class="decide"><h2>For your decision</h2><p class="lede">The six failure-mode labels and six reader types are exactly as approved. Three choices below are ours and adopted provisionally.</p><ol>
+<li><p class="dh">Retitled and rewritten for flow.</p><p>Following your go-ahead, the chapter title is now "What can each reader do?", replacing the approved "What should you do about it?" to fit the house rule of using "we", never "you". The reader lines no longer say "your" either. The chapter opens with a short bridge. Section 4.1 now gathers the limits of each move that used to sit in Chapter 2, and the "limits Learning X" tags are dropped from the table. Section 4.4 merges our view to 2030 (moved from Chapter 3) with the five signs, and ties two of the signs back to the credit question raised in Chapter 1. Say if you want the original title back.</p></li>
+<li><p class="dh">Failure mode 2 ("A loyal installed base holds") is now evidenced with India, not Thai excavators.</p><p>The evidence is JCB's lead in India's backhoe loaders (34,632 registrations against LiuGong's 1,061 in FY26) and China's flat 32–39% share of Indian pump imports since 2015. Thai excavators get one cautious sentence, because SANY reports it was Thailand's top excavator seller in 2020–21 (decision A from the top-up).</p></li>
+<li><p class="dh">Thresholds for signs 1–3 are new and ours.</p><p>v5 kept the approved thresholds for Komatsu (above 25% for two quarters) and the electric share (above 5%). For the other three we propose: China above 50% of robot imports or a first Chinese robot service or assembly site; any Indian duty imposed on Chinese construction equipment; a second maker-owned finance licence in Indonesia. Change them if you prefer.</p></li>
+<li><p class="dh">Signposts dropped from the body.</p><p>Going from eight signposts to five removes the US excess-capacity investigation, the first Press Note 2 approvals, the EU–India agreement's entry into force and Indonesia's coal quotas. We propose listing them in Appendix A as "other dates to watch".</p></li>
+</ol></section>
+<div class="legend"><span class="lnew">New text (v2)</span><span class="lold">Approved text it came from (v1)</span></div>
+<section class="pair" id="s4-1">
+<div class="sechead"><span class="num">4.1</span><h2>The playbook breaks in six ways</h2></div>
+<div class="change"><p class="chl">What changed</p><ul><li>The six failure-mode blocks become one table, split two and four as v5 sets out; the labels and the "limits" notes are unchanged.</li><li>Failure mode 2 is re-evidenced with India (backhoe loaders; pumps); Thai excavators get one cautious sentence.</li><li>Failure mode 3 now includes India's two imposed duties on factory machines.</li><li>New paragraph gathering the limit of each move (credit, resale value, machine data, plants, rules, electric), moved from Chapter 2 so it is told once.</li><li>The "limits Learning X" tags are dropped from the table, because the text no longer numbers the lessons.</li></ul></div>
+<div class="cols"><div class="col new"><p class="colh">New text</p>
+
+<p>Every move in Chapter 2 has a limit, and the evidence shows six ways the approach breaks down. In two, the established brands hold their ground. In four, Chinese firms stumble on their own.</p>
+<div class="tw"><table>
+<thead><tr><th>Failure mode</th><th>What happened</th><th>Sign to watch</th></tr></thead>
+<tbody>
+<tr><td colspan="3"><b>Where incumbents hold</b></td></tr>
+<tr><td>1. Buyers return where uptime matters</td><td>Tata Hitachi's share of Indian mining excavators fell from about 50% to 20% as Chinese makers entered, then recovered to about 35%.<sup>42</sup></td><td>Incumbent share rising in mining and other hard-working segments</td></tr>
+<tr><td>2. A loyal installed base holds</td><td>In India's backhoe loaders, the largest segment, JCB registered 34,632 machines in FY26 and LiuGong, the only Chinese brand listed, 1,061.<sup>140</sup> China's share of Indian pump imports has stayed at 32–39% since 2015.<sup>N1</sup></td><td>Chinese share flat in a category while it rises in the categories around it</td></tr>
+<tr><td colspan="3"><b>Where Chinese firms stumble</b></td></tr>
+<tr><td>3. High share invites trade cases</td><td>India imposed duties on Chinese laser machines (2023) and plastic-moulding machines (2025); its recommended crane duties were not imposed. The UK charges 18.81–40.08% on Chinese excavators, and the EU up to 66.7% on Chinese access platforms, with a case on mobile cranes opened in December 2025.<sup>14,37,43,96,125,N17,N18</sup></td><td>Near-total import share, local producers exiting, a petition filed</td></tr>
+<tr><td>4. Overseas acquisitions lose money</td><td>Efort, a Chinese robot maker, booked a RMB154.8m impairment on its overseas integration business, lost RMB497m in 2025 and has not made a profit in any year since 2016.<sup>44,45,157</sup></td><td>Impairments on acquired overseas units</td></tr>
+<tr><td>5. Dealer networks outgrow parts supply</td><td>After the parent of Neta, a Chinese electric-car brand, went bankrupt, 18 Thai dealers sought more than THB200m and some repairs waited up to ten months for parts.<sup>46</sup></td><td>Dealer numbers rising faster than parts depots and technicians</td></tr>
+<tr><td>6. Price wars at home drain cash</td><td>Efort's robot revenue fell about 21.5% in 2025 and its robot gross margin about 6.5 points, which it put down to intense price competition and its own aggressive bidding.<sup>44</sup></td><td>Falling home-market margins at the parent company</td></tr>
+</tbody></table></div>
+<p>Thai excavators are often cited as a case where Japanese brands held. The record is less clear. China's share of Thai excavator imports barely moved between 2019 and 2024, but SANY's Thai distributor reports that it was already the country's top excavator seller in 2020 and 2021, with 30.4% of the market in 2021.<sup>38,N41</sup> Appendix A sets out the detail.</p>
+<p>Each move also carries its own risk. Credit-led sales are the most exposed in a downturn, which is why the 2026–27 slowdown matters (Chapter 1), and credit between related companies draws regulators' attention. Resale value is still unproven either way: Tata Hitachi's managing director says customers find Chinese machines have "no resale price", but that is a competitor's claim, and no free public data on used prices by brand exist to test it.<sup>42</sup> The established brands also lead on machine data; Komatsu tracks about 840,000 machines through its Komtrax system, and no Chinese maker publishes a comparable figure.<sup>123</sup> Local plants depend on trade policy, and an announced plant is not always a working one (Chapter 3). Rules cut both ways: India's tender rules still keep most Chinese machines out of government purchasing, and Indonesia has exempted US products from its local-content rules since February 2026.<sup>126,61</sup> And the electric opening in construction equipment is still small (sign 5 below).</p>
+<p>Read together, the failure modes show where the contest is decided. Incumbents hold where a machine's value over its life matters more than its price. Chinese firms are exposed where they grow faster than their support, or where their share grows faster than host governments will accept. Trade cases now arrive fastest in factory machines (Chapter 3).</p>
+</div><div class="col old"><p class="colh">Approved v1</p><div class="v1src"><p class="v1h">v1 · Chapter 13. Where the playbook breaks</p><div class="inbrief"><b>In brief</b>The playbook breaks in six documented ways. Two show where incumbents hold; four show where Chinese entrants are exposed. Each has an early-warning sign, and each points to a reader who can act on it.</div>
+<p>A paper about learning from Chinese OEMs would be incomplete without the cases where their approach has not worked. Each failure mode below gives what happens, the evidence, the sign to watch and the learning it limits.</p>
+<p class="exref">Exhibit 28: Each way the playbook breaks has an early-warning sign and a reader who can act</p></div><div class="v1src"><p class="v1h">v1 · Chapter 13. Where the playbook breaks · Where incumbents hold</p><div class="fmode"><b>1. Buyers return where uptime matters</b><span class="fl">Limits Learning 3</span>
+<p>Where machines work hard and their resale value matters, buyers come back to incumbents. Tata Hitachi's share of Indian mining excavators fell from about 50% to 20% as Chinese makers entered, then recovered to about 35%.<sup>42</sup></p>
+<p class="fw"><em>Watch for</em> incumbent share rising in mining and other high-utilisation segments.</p></div>
+<div class="fmode"><b>2. A loyal installed base holds</b><span class="fl">Limits Learning 1</span>
+<p>A large installed base with local production and dealers can keep a category even when neighbouring categories are lost. In Thai excavators Japan's share of imports rose from 39.8% to 50.8% while China's stayed at about 36%.<sup>38</sup></p>
+<p class="fw"><em>Watch for</em> Chinese share flat in a category while it rises in the categories around it.</p></div></div><div class="v1src"><p class="v1h">v1 · Chapter 13. Where the playbook breaks · Where Chinese entrants are exposed</p><div class="fmode"><b>3. High share invites trade cases</b><span class="fl">Limits Learnings 2 and 3</span>
+<p>Trade remedies follow high share, and they follow fastest where credit between related companies is hard for regulators to see through. India's regulator rejected SANY's and XCMG's submissions in the crane case and recommended duties of up to 52.03%, although the government did not impose them.<sup>14,37</sup> Export success also triggers remedies elsewhere. The UK imposed duties of 18.81–40.08% on Chinese-made excavators until 2030; the EU has put combined duties of up to 66.7% on Chinese mobile access equipment and, in December 2025, opened an anti-dumping case on Chinese mobile cranes.<sup>43,96,125</sup></p>
+<p class="fw"><em>Watch for</em> near-total import share in a category, local producers exiting, and a petition filed.</p></div>
+<div class="fmode"><b>4. Overseas acquisitions lose money</b><span class="fl">Limits Learning 4</span>
+<p>Buying abroad without the capability to run the business destroys value. Efort's revenue fell 32.12% in 2025; it booked a RMB154.8m impairment on its overseas system-integration business, lost RMB497m and has not made a profit in any year since 2016.<sup>44,45,157</sup></p>
+<p class="fw"><em>Watch for</em> impairments on acquired overseas units.</p></div>
+<div class="fmode"><b>5. Dealer networks outgrow parts supply</b><span class="fl">Limits Learnings 1 and 2</span>
+<p>A dealer network that grows faster than its parts supply and its parent's finances breaks quickly. After Neta's parent went bankrupt, its Thai dealers sought more than THB200m and some repairs waited up to ten months for parts (Chapter 12).<sup>46</sup></p>
+<p class="fw"><em>Watch for</em> dealer numbers rising faster than parts depots and technicians, and lengthening parts waits.</p></div>
+<div class="fmode"><b>6. Price wars at home drain cash</b><span class="fl">Limits all six learnings</span>
+<p>Price wars in China weaken the capacity to invest abroad. Efort's robot revenue fell about 21.5% in 2025 and its robot gross margin about 6.5 points, which the company put down to intense price competition and its own aggressive bidding.<sup>44</sup></p>
+<p class="fw"><em>Watch for</em> falling domestic margins at the parent company.</p></div>
+<p>Read together, the failure modes show where the contest is decided. Incumbents hold where a machine's value over its life matters more than its price. Entrants are exposed where they grow faster than their support, or where their share grows faster than host governments will accept. Both point to the same ground: parts, service, finance and residual value, which is where the actions in Chapter 14 concentrate.</p></div><div class="v1src"><p class="v1h">v1 · Chapter 13. Where the playbook breaks · What remains unproven</p><p>Incumbents' claim that Chinese machines have “no resale price” remains untested in public data.<sup>42</sup> Until a credible dataset of used-equipment prices by brand exists, it is best treated as a claim. Whichever side publishes such evidence first is likely to shape how lenders price Chinese machines.</p></div><div class="v1src"><p class="v1h">v1 · Chapter 5. Learning 2: Treat customer credit as part of the product · Where it stops working</p><p>Credit-led share is exposed in a downturn. The 2026 coal-quota cut in Indonesia and payment delays in Indian road building will test customers who bought on easy terms (Chapter 3). Opaque credit between related companies also invites trade remedies, as India's crane case shows.<sup>14</sup></p></div><div class="v1src"><p class="v1h">v1 · Chapter 6. Learning 3: Price just enough, then invest in the lifecycle · Where it stops working</p><p>Resale value is unresolved. Tata Hitachi's managing director has said customers find Chinese machines have “no resale price” and higher failure rates.<sup>42</sup> These are an incumbent's claims, and no free public dataset of used prices by brand exists to test them.</p></div><div class="v1src"><p class="v1h">v1 · Chapter 7. Learning 4: Localise plants, then export from the host · Where it stops working</p><p>Plant economics depend on trade policy. The US investigation into excess capacity covers all five markets in this paper and could reach plants in the region (Chapter 15).<sup>65</sup></p></div><div class="v1src"><p class="v1h">v1 · Chapter 8. Learning 5: Turn local-content and investment rules into an advantage · Where it stops working</p><p>Rules now move in both directions. India's tender rules still keep Chinese machines out of public purchasing, and Indonesia's exemption for US goods changes the calculation only for US-brand OEMs.</p></div></div></div></section>
+<section class="pair" id="s4-2">
+<div class="sechead"><span class="num">4.2</span><h2>The established brands are already copying it</h2></div>
+<div class="change"><p class="chl">What changed</p><ul><li>New section built from v1 4.3 and new evidence: second brands (ELGi, United Tractors, Jungheinrich AntOn moved from v1 Chapter 9, Atlas Copco), trade defence by incumbents with Indian plants, and retreat to premium (Volvo; Fanuc and Yaskawa).</li><li>Hexindo's move to the LANDCROS brand and Volvo's India assembly detail move to Appendix A.</li><li>Adds our view of what each response costs.</li></ul></div>
+<div class="cols"><div class="col new"><p class="colh">New text</p>
+
+<p>The established brands have answered in three ways, and each borrows from the Chinese approach.</p>
+<p><b>Cheaper second brands.</b> ELGi has launched a low-cost compressor range on its own separate distributor network (Chapter 3). United Tractors sells a cheaper second-tier line alongside Komatsu machines and includes up to three years of preventive maintenance with every unit.<sup>84</sup> Jungheinrich launched AntOn, a value range of lithium-ion forklifts, in six Asian markets in January 2026; it is made for Jungheinrich by its Chinese partner EP Equipment.<sup>130,131</sup> Atlas Copco has owned two Chinese compressor brands for two decades (Chapter 3). For these firms, learning from the Chinese playbook already means sourcing from it.</p>
+<p><b>Trade defence from local plants.</b> Established brands that make machines in India use India's trade rules. Milacron India and Shibaura Machine India were among the four applicants in the case that led to duties on Chinese plastic-moulding machines.<sup>N16</sup> The rules cut both ways: Bystronic's China-made laser machines pay a 30.16% duty in India.<sup>N18</sup></p>
+<p><b>Retreat to premium.</b> Volvo sold its 70% stake in SDLG, its value brand, in June 2025 to refocus on premium machines for mining, quarrying and heavy infrastructure.<sup>100</sup> In robots, Fanuc has lost its top position in China's shipments. Fanuc is building a US$90m plant in Michigan and Yaskawa a US$180m plant in Wisconsin, and in FY2025 the two companies' combined sales in the Americas passed their sales in China.<sup>N27</sup></p>
+<p>Each answer has a cost. A second brand works best where buyers are led by price, as in forklifts and compressors. Trade defence buys time, but it pushes Chinese makers to build behind the wall, as HSG's Indian factory plan shows. Retreat gives up volume, and with it the parts and service revenue that a large installed base earns.</p>
+</div><div class="col old"><p class="colh">Approved v1</p><div class="v1src"><p class="v1h">v1 · Chapter 4. Learning 1: Enter through a narrow beachhead, then broaden · How incumbents have responded</p><p>United Tractors, Komatsu's Indonesian distributor, sells a cheaper second-tier product alongside Komatsu machines and includes up to three years of preventive maintenance with every unit.<sup>84</sup> Hexindo will adopt Hitachi Construction Machinery's new LANDCROS brand from April 2027 and widen its range.<sup>83</sup> Volvo Construction Equipment went the other way: in June 2025 it sold its 70% stake in SDLG, its value brand, for SEK8bn, to refocus on premium machines for mining, quarrying and heavy infrastructure.<sup>100</sup> In India it will keep assembling SDLG machines until the end of 2026 and launch localised Volvo wheel loaders in 2027.<sup>101</sup> Every incumbent faces the same choice: meet the challenger with a cheaper line of its own, or retreat to segments where uptime and service still decide the purchase.</p></div></div></div></section>
+<section class="pair" id="s4-3">
+<div class="sechead"><span class="num">4.3</span><h2>Every reader has a first move</h2></div>
+<div class="change"><p class="chl">What changed</p><ul><li>One first move per reader, drawn from v1's 12-month actions. The full lists (five actions per reader, with horizon and learning tags) and the partner-check table move to Appendix C, as v5 sets out.</li><li>The champions' line merges two v1 actions (Press Note 2; local-content qualification), as in the v1 executive summary.</li></ul></div>
+<div class="cols"><div class="col new"><p class="colh">New text</p>
+
+<p>Each reader has a different stake in all this, and a different first step. Exhibit 8 sets out the actions, and Appendix C gives the full lists with time horizons and checks for choosing a partner. In brief:</p>
+<ul>
+<li><b>Global incumbents:</b> aim their finance arms at first-time and small-fleet buyers, and publish uptime and resale evidence by model before a competitor or a lender defines it.</li>
+<li><b>Indian and ASEAN champions:</b> use India's Press Note 2 and Indonesia's local-content rules to take Chinese technology or capital on their own terms.</li>
+<li><b>Dealers:</b> add a challenger brand in the niches where entrants land, with parts-supply commitments written into the contract.</li>
+<li><b>Financiers:</b> build residual-value data by brand and model, and test equipment loans against Indonesia's coal quotas and Indian payment delays.</li>
+<li><b>Chinese OEMs planning their next market:</b> expect a trade case once import share nears total, keep credit to related companies transparent, and build parts depth before adding dealers.</li>
+<li><b>Policymakers:</b> watch credit quality in equipment finance, including the new maker-owned finance companies, and tie incentives to exports and local suppliers.</li>
+</ul>
+<figure class="exm"><span class="exn">Exhibit 8</span><span class="ext">Actions by reader: every reader has a first move in the next 12 months</span><span class="exs">v1 Exhibit 29, simplified</span></figure>
+</div><div class="col old"><p class="colh">Approved v1</p><div class="v1src"><p class="v1h">v1 · Chapter 14. What each reader should do</p><div class="inbrief"><b>In brief</b>Each learning leads to different moves for six reader types. Every one of them has a first move to make in the next 12 months.</div>
+<p>The actions below follow from the six learnings and the six failure modes. Each is tagged with the learning it follows from and a horizon: the next 12 months, 12–36 months, or to 2030.</p>
+<p class="exref">Exhibit 29: Every reader has a first move in the next 12 months</p></div><div class="v1src"><p class="v1h">v1 · Chapter 14. What each reader should do · Global incumbents</p><p>Incumbents start with the assets Chinese entrants spent a decade building: installed bases, finance arms, dealer networks and, often, local plants.</p>
+<ol class="acts">
+<li><span class="hz h12">12 months</span><span class="lt">L2</span>Point the captive finance arm at first-time and small-fleet buyers, with down payment, tenor, seasonal repayment and trade-in terms designed alongside the machine.</li>
+<li><span class="hz h12">12 months</span><span class="lt">L3</span>Publish uptime and resale evidence by model before a competitor or a lender defines it.</li>
+<li><span class="hz h36">12–36 months</span><span class="lt">L3</span>Build parts, service and remanufacturing as a revenue line, and use machine data for uptime guarantees.</li>
+<li><span class="hz h36">12–36 months</span><span class="lt">L1</span>Audit the segments where the range is thin, then decide deliberately to defend each one with a value line, sourced from a partner if necessary as Jungheinrich has done, or to exit, as Volvo did with SDLG.</li>
+<li><span class="hz h30">To 2030</span><span class="lt">L4, L6</span>Run Asian plants as export hubs, and launch electric ranges before adoption becomes material.</li>
+</ol></div></div></div></section>
+<section class="pair" id="s4-4">
+<div class="sechead"><span class="num">4.4</span><h2>Our view to 2030, and five signs to watch</h2></div>
+<div class="change"><p class="chl">What changed</p><ul><li>Merged with "Our view to 2030" (moved from Chapter 3), so the paper ends on one forward look: the view, then the signs that would change it.</li><li>Two signs (maker-owned finance companies; Komatsu's share) are tied back to the credit question raised in Chapter 1.</li><li>Eight signposts are cut to the five v5 names, each with its latest reading, a threshold and what it would mean.</li><li>The approved thresholds (Komatsu above 25% for two quarters; electric share above 5%) are kept.</li><li>The review rhythm (twice a year) is kept.</li></ul></div>
+<div class="cols"><div class="col new"><p class="colh">New text</p>
+
+<p>No public forecast of brand shares to 2030 exists for these markets, so we do not attempt one. Instead we give our view for each product group and name what would change it.</p>
+<div class="tw"><table>
+<thead><tr><th>Product group</th><th>Our view to 2030</th><th>What would change it</th></tr></thead>
+<tbody>
+<tr><td>Forklifts and material handling</td><td>Chinese share consolidates. The move to electric has already happened, the first plants have opened in Thailand, and one Western incumbent now sources its value range from China.</td><td>Trade cases on forklifts in the region</td></tr>
+<tr><td>Construction equipment, Indonesia</td><td>Chinese share keeps rising in construction and nickel-related work. Mining stays contested, because incumbents' installed base and service matter most there.</td><td>More equipment makers licensed to run finance companies; Komatsu's share back above 25%</td></tr>
+<tr><td>Construction equipment, India</td><td>Incumbents hold backhoe loaders and mining excavators. Chinese capital enters mainly through minority partnerships rather than imports. If India begins imposing recommended duties, that shift speeds up.</td><td>India's next trade-duty decisions on capital goods</td></tr>
+<tr><td>Factory machines</td><td>Chinese share keeps rising wherever Chinese factories are built, with local service and assembly following. India's duties slow the shift there and push Chinese makers to build behind the wall. Japan keeps the precision end.</td><td>Further Indian duties; Japan's share of machining centres falling below China's</td></tr>
+<tr><td>Robots</td><td>China's share of imports keeps rising, led by hardware sold through installers and local partners. Chinese-owned service and assembly in the region begin before 2030.</td><td>China's share of robot imports; the first Chinese robot service or assembly site in the region</td></tr>
+<tr><td>Compressors and pumps</td><td>Import share keeps rising at the low end. Channel building follows slowly, and local makers answer with low-cost ranges.</td><td>Chinese brands building local dealer networks or plants</td></tr>
+</tbody></table></div>
+<p>Five signs will show which way these views are moving, and how fast the next products follow (Exhibit 9). Two of them, the spread of maker-owned finance companies and Komatsu's share in Indonesia, also answer the question from Chapter 1: whether share won partly on easy credit survives the downturn. We suggest reviewing the signs twice a year; those two move monthly and give the earliest reading.</p>
+<div class="tw"><table>
+<thead><tr><th>Sign</th><th>Latest reading</th><th>Threshold</th><th>What it would mean</th></tr></thead>
+<tbody>
+<tr><td>1. China's share of robot imports (India, Indonesia, Thailand, Malaysia)</td><td>42% in 2025, against Japan's 27%<sup>N1</sup></td><td>Above 50%, or the first Chinese-owned robot service or assembly site in the region</td><td>Robots move from getting in to staying, on the factory-machine path</td></tr>
+<tr><td>2. India's next trade-duty decisions on capital goods</td><td>Duties on lasers (2023) and plastic-moulding machines (2025); crane duties recommended but not imposed<sup>37,N17,N18</sup></td><td>Any duty imposed on Chinese construction equipment</td><td>India shifts from channelling Chinese capital to blocking Chinese machines</td></tr>
+<tr><td>3. Maker-owned finance companies in Indonesia</td><td>One licensed (SANY, September 2026) and one dealer joint venture (XCMG)<sup>23,56</sup></td><td>A second maker-owned licence</td><td>Captive credit spreading across Chinese brands</td></tr>
+<tr><td>4. Komatsu's share in Indonesia</td><td>17% in January–April 2026<sup>81</sup></td><td>Above 25% for two quarters</td><td>An incumbent counter-attack is working</td></tr>
+<tr><td>5. Electric share of China's excavator exports</td><td>0.2% in the first half of 2026 (135 of 73,295)<sup>53</sup></td><td>Above 5%</td><td>The electric wedge reaches construction equipment</td></tr>
+</tbody></table></div>
+<figure class="exm"><span class="exn">Exhibit 9</span><span class="ext">What to watch: five signs, with their latest readings and thresholds</span><span class="exs">v1 Exhibit 30, cut to five</span></figure>
+</div><div class="col old"><p class="colh">Approved v1</p><div class="v1src"><p class="v1h">v1 · Chapter 15. Outlook to 2030 and signposts</p><div class="inbrief"><b>In brief</b>The next phase will be decided by finance, aftermarket services and trade policy rather than by new machines. Outcomes will differ by category, and eight signposts will show which way each is going.</div>
+<p>No public forecast of brand shares to 2030 exists for these markets, so we do not attempt one. Instead we set out three paths, give our view by category, and name the signposts that would change it.</p></div><div class="v1src"><p class="v1h">v1 · Chapter 15. Outlook to 2030 and signposts · Our view by category</p><div class="tw snap"><table><thead><tr><th>Category</th><th>Our view to 2030</th><th>What would change it</th></tr></thead><tbody>
+<tr><td>Forklifts and material handling</td><td>Chinese share consolidates. The move to electric has already happened, the first plants have opened in Thailand, and one Western incumbent now sources its value range from China.</td><td>Trade remedies on forklifts in the region, or a narrowing of the battery-cost gap (signpost 7)</td></tr>
+<tr><td>Construction equipment, Indonesia</td><td>Chinese share keeps rising in construction and nickel-related work; mining remains contested, because incumbents' installed base and service network matter most there.</td><td>More equipment makers licensed to run finance companies (5); Komatsu's share recovering above 25% (6); coal quotas (8)</td></tr>
+<tr><td>Construction equipment, India</td><td>Incumbents hold backhoe loaders and mining excavators. Chinese capital enters mainly through minority partnerships rather than through imports. If India begins imposing recommended duties, that shift speeds up.</td><td>A trade-remedy decision on Chinese capital goods (1); the first Press Note 2 approvals (2)</td></tr>
+<tr><td>Compressors and pumps</td><td>Import share keeps rising at the low end, and channel building follows, as local makers such as ELGi launch low-cost ranges in response.</td><td>Evidence of Chinese brands building local dealer networks or plants</td></tr>
+<tr><td>Robotics and automation</td><td>Inconclusive. The Chinese home-market lead has not yet travelled abroad.</td><td>Public data on India's robot market by supplier country</td></tr>
+</tbody></table></div>
+<p>Where our view depends on policy, we state it as a condition rather than a forecast of what governments will do. The US excess-capacity investigation matters to every category: tariffs that name plants in the five markets would weaken the export case for plants built there (signpost 3).</p></div><div class="v1src"><p class="v1h">v1 · Chapter 15. Outlook to 2030 and signposts · Signposts to watch</p><p class="exref">Exhibit 30: Six of the eight signposts are likely to move within a year</p>
+<ol class="sgn">
+<li><b>India's next trade-remedy decision on Chinese capital goods.</b> The crane duties were recommended but not imposed. A duty imposed on any Chinese capital good would signal a change of stance. Watch DGTR and the Finance Ministry.<sup>37</sup></li>
+<li><b>The first Press Note 2 approvals in capital goods.</b> They will show whether the minority joint-venture route is real.<sup>34</sup></li>
+<li><b>The outcome of the US excess-capacity investigation.</b> Tariffs that name plants in the five markets would change the export economics of Asian plants. Watch USTR and the Federal Register.<sup>65</sup></li>
+<li><b>Entry into force of the EU–India trade agreement.</b> It will lower European OEMs' costs of serving India.<sup>59,60</sup></li>
+<li><b>Further finance-company licences for equipment makers in Indonesia.</b> A second maker-owned licence would show captive finance spreading. Watch OJK.<sup>23</sup></li>
+<li><b>United Tractors' and Hexindo's market shares.</b> Komatsu back above 25% for two quarters would signal an incumbent counter-attack.<sup>81,83</sup></li>
+<li><b>The electric share of Chinese equipment exports.</b> Only 135 of 73,295 excavators exported in the first half of 2026 were electric; a share above 5% would mark the next wedge.<sup>53</sup></li>
+<li><b>Indonesia's coal quotas.</b> A 2027 quota above the 2026 level would bring mining-fleet demand back.<sup>88</sup></li>
+</ol>
+<p>We suggest reviewing the signposts twice a year, alongside the planning cycle. Signposts 5 and 6 move monthly and give the earliest read on the contest in Indonesia. Signposts 1 to 4 move with policy decisions and can change the economics of a plant at a stroke. Signposts 7 and 8 set the pace of the next technology generation and of the mining cycle.</p></div></div></div></section>
+<section id="fixes" class="fixes"><h2>Fix log</h2><p class="lede">Accuracy fixes and wording changes made in this chapter, with the source. Items that change a verdict, learning or headline number are in "For your decision" above; none of these does.</p><div class="tw"><table><thead><tr><th>No.</th><th>What was fixed</th><th>Source</th></tr></thead><tbody>
+<tr><td class="n">C4-1</td><td>Komatsu's latest share: 17% in Jan–Apr 2026.</td><td>Ref 81</td></tr>
+<tr><td class="n">C4-2</td><td>Electric share of excavator exports written as 0.2% (135 of 73,295, H1 2026).</td><td>Ref 53</td></tr>
+<tr><td class="n">C4-3</td><td>Failure mode 3: India's crane duties "recommended but not imposed" (locked fix F1); laser and plastic-moulding duties dated from the notifications.</td><td>Refs 37; N17, N18</td></tr>
+<tr><td class="n">C4-4</td><td>Failure mode 2: Thai excavators no longer described as Japanese brands holding (top-up decision A).</td><td>Ref 38; N41 (page read)</td></tr>
+<tr><td class="n">C4-5</td><td>Efort figures kept as approved (RMB154.8m impairment; RMB497m loss; robot revenue −21.5%; margin −6.5 points).</td><td>Refs 44, 45, 157</td></tr>
+<tr><td class="n">C4-6</td><td>Fanuc and Yaskawa US plants and Americas-versus-China sales are from a Korean news report, labelled as media.</td><td>N27</td></tr>
+<tr><td class="n">C4-7</td><td>Bystronic's China-made lasers pay 30.16% in India (now DNE Laser for the Shenzhen entity, Amendment 04/2026).</td><td>N18</td></tr>
+</tbody></table></div></section>
+<section id="sources" class="sources"><h2>Sources cited in this chapter</h2><p class="lede">v1 numbers are kept until references are renumbered at assembly. N-numbers are new in batch 3. “Page read” or “filing read” means the source itself was opened on 2 Oct 2026. “Search-verified” means it was confirmed only through search results naming the page, because the site blocks automated reading.</p>
+<h3>New sources</h3><div class="tw"><table><thead><tr><th>No.</th><th>Source</th><th>Type</th><th>How checked</th></tr></thead><tbody>
+<tr><td class="n">N1</td><td>UN Comtrade public API (preview endpoint), reporter-reported imports by partner: 36-product screen (2015, 2019, 2022–25) and 2015–2025 series for 15 products. Our calculations of value-weighted shares. <a href="https://comtradeapi.un.org/public/v1/preview/C/A/HS">link</a></td><td>Data</td><td>Pulled 1 Oct 2026 (kit: comtrade_series.md); robot figures re-pulled 2 Oct 2026 and match, plus Indonesia partner and monthly detail</td></tr>
+<tr><td class="n">N16</td><td>Final findings: anti-dumping investigation on plastic processing machines from China PR and Chinese Taipei. DGTR, 27 Mar 2025 (paras 47(l), 52, 54, 104, 106(t)). <a href="https://dgtr.gov.in/sites/default/files/2025-04/Final_FF_PPM_NCV_27.03.2025_0.pdf">link</a></td><td>Primary</td><td>From evidence log (read 1 Oct); host blocked here</td></tr>
+<tr><td class="n">N17</td><td>Notification 21/2025-Customs (ADD), 26 Jun 2025: anti-dumping duty on plastic processing machines. <a href="https://worldtradescanner.com/Ntfn%2021-Cus(ADD)-26.06.2025.htm">link</a></td><td>Primary</td><td>From evidence log</td></tr>
+<tr><td class="n">N18</td><td>Notification 15/2023-Customs (ADD), 22 Dec 2023: anti-dumping duty on industrial laser machines from China (amended by 04/2026-Customs (ADD), 8 Apr 2026). <a href="https://taxguru.in/custom-duty/anti-dumping-duty-industrial-laser-machines-import-china.html">link</a></td><td>Primary</td><td>From evidence log; dates search-verified 2 Oct 2026</td></tr>
+<tr><td class="n">N27</td><td>Japanese robot makers turn to the US as Chinese rivals rise (Fanuc, Yaskawa). Financial News (Korea), 30 Sep 2026. <a href="https://en.fnnews.com/news/202609301411141531">link</a></td><td>Secondary</td><td>From evidence log</td></tr>
+<tr><td class="n">N41</td><td>Sany Thaiyont boasts the highest excavator sales volume in Thailand for 2 consecutive years with 30.4% of market share (1,600 units in 2020; 1,840 in 2021). Carrushome, 2022 (company announcement). <a href="https://www.carrushome.com/en/sany-thaiyont-boasts-the-highest-excavator-sales-volume-in-thailand-for-2-consecutive-years-with-30-4-of-market-share/">link</a></td><td>Secondary</td><td>Page read 2 Oct 2026 (company claim)</td></tr>
+</tbody></table></div><h3>Approved (v1) references still cited</h3><ul class="v1refs">
+<li><span class="n">14</span> Final findings: anti-dumping investigation concerning imports of Certain Cranes originating in or exported from China PR</li>
+<li><span class="n">23</span> OJK&#x27;s general announcements page</li>
+<li><span class="n">37</span> Anti-dumping duty on Chinese cranes still awaiting govt nod despite DGTR recommendation. Outlook Business, 5 Aug 2026. h</li>
+<li><span class="n">38</span> Thailand imports of HS 842952 (360° excavators) by partner, 2019 and 2024. UN Comtrade via World Bank WITS, accessed 27</li>
+<li><span class="n">42</span> Confident of managing Chinese competition: Tata Hitachi MD Sandeep Singh. Business Standard, 24 Sep 2026. https://www.bu</li>
+<li><span class="n">43</span> Trade remedies notice 2025/10: definitive anti-dumping duty on certain excavators originating from China. UK Government</li>
+<li><span class="n">44</span> 埃夫特：2025年净亏损4.97亿元 (Efort: 2025 net loss RMB497m). Securities Times (STCN), Apr 2026. https://stcn.com/article/detail/37</li>
+<li><span class="n">45</span> 2025年，国内工业机器人龙头亏损5个亿 (Efort 2025 loss and impairments). OFweek, Apr 2026. https://mp.ofweek.com/robot/a756714892637</li>
+<li><span class="n">46</span> Detailing Neta&#x27;s fall from grace. Bangkok Post, Jul 2025. https://www.bangkokpost.com/business/motoring/3067716/detailin</li>
+<li><span class="n">53</span> China&#x27;s excavator exports surge 33% in first half as industry pivots to electric power. South China Morning Post, Jul 20</li>
+<li><span class="n">56</span> XCMG-GMT umumkan perusahaan patungan pembiayaan pada Mining Indonesia 2026. Equipment Indonesia, 9 Sep 2026. https://www</li>
+<li><span class="n">61</span> Understanding the new US–Indonesia trade agreement and what it means for businesses. Rajah &amp; Tann Asia, Mar 2026. https:</li>
+<li><span class="n">81</span> United Tractors (UNTR) jual 1.690 Komatsu hingga Mei 2026, turun 28,05%. Bisnis Indonesia, 30 Jun 2026. https://market.b</li>
+<li><span class="n">84</span> Prospek emiten alat berat di tengah persaingan dari China. IDX Channel, 2026. https://www.idxchannel.com/market-news/pro</li>
+<li><span class="n">96</span> Europe slaps more tariffs on Chinese mobile access equipment. Global Construction Review, 29 Apr 2025. https://www.globa</li>
+<li><span class="n">100</span> Volvo Construction Equipment refocuses its presence in China, divests its shares in SDLG. Volvo Group, 24 Jun 2025. http</li>
+<li><span class="n">123</span> Komatsu Report 2026: value creation. Komatsu, 2026. https://www.komatsu.jp/en/-/media/home/ir/library/annual/2026/en/kr2</li>
+<li><span class="n">125</span> Notice of initiation of an anti-dumping proceeding concerning imports of mobile cranes originating in the People&#x27;s Repub</li>
+<li><span class="n">126</span> Restrictions on public procurement from certain countries. Press Information Bureau, Government of India, 23 Jul 2020. h</li>
+<li><span class="n">130</span> Launch of new value brand AntOn by Jungheinrich in Asia Pacific. Jungheinrich, 20 Jan 2026. https://www.jungheinrich.com</li>
+<li><span class="n">131</span> How our AntOn by Jungheinrich is made. Jungheinrich, 17 Feb 2026. https://www.jungheinrich.com/en/newsroom/jungheinrich-</li>
+<li><span class="n">140</span> FADA construction equipment sales FY 2025-26. TractorJunction Infra, 6 Apr 2026. https://infra.tractorjunction.com/en/ne</li>
+<li><span class="n">157</span> 十年累计亏近14亿元 科创板企业埃夫特&quot;亏损魔咒&quot;何解？. Sina Finance, 9 May 2026. https://finance.sina.com.cn/jjxw/2026-05-09/doc-inhxfnzt1913210.</li>
+</ul></section>
+<footer><p>Source files: <code>v2/text/ch4.html</code> (paper text in assembly-source conventions), <code>v2/tools/chapter_data.py</code> (notes and fix log). Built 2 October 2026.</p></footer></div>
