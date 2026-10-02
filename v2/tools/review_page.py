@@ -154,7 +154,7 @@ def build(key):
 
     parts.append('<section id="sources" class="sources"><h2>Sources cited in this chapter</h2>'
                  '<p class="lede">v1 numbers are kept until references are renumbered at assembly. N-numbers are new in batch 3. '
-                 '“Search-verified” means the fact was confirmed through web search results that name the source page, because this session cannot open pages directly.</p>')
+                 '“Page read” or “filing read” means the source itself was opened on 2 Oct 2026. “Search-verified” means it was confirmed only through search results naming the page, because the site blocks automated reading.</p>')
     parts.append('<h3>New sources</h3><div class="tw"><table><thead><tr><th>No.</th><th>Source</th><th>Type</th><th>How checked</th></tr></thead><tbody>')
     tmap = {'P': 'Primary', 'S': 'Secondary', 'D': 'Data'}
     for k in newall:
