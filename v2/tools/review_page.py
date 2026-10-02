@@ -22,7 +22,10 @@ def container(key):
     if key == 'exec':
         h = V1.find('h3', string=re.compile('^Executive summary'))
         return h.parent, h
-    el = V1.find('div', id=key)
+    if key.startswith('p0:'):
+        el = V1.find_all('div', id='p0')[int(key[3:])]
+    else:
+        el = V1.find('div', id=key)
     return el, el.find('h3')
 
 
@@ -108,6 +111,7 @@ def build(key):
     inbrief = soup.find('div', class_='inbrief')
     inbrief.b.decompose()
     total = words(src)
+    tablew = len(html.unescape(re.sub(r'<[^>]+>', ' ', ''.join(re.findall(r'<div class="tw snap">.*?</div>', re.sub(r'<sup>.*?</sup>', '', src), flags=re.S)))).split())
     v1all, newall = cites(src)
     secs = soup.find_all('section')
     parts = []
@@ -117,10 +121,10 @@ def build(key):
     parts.append('<h1>%s</h1>' % html.escape(title))
     parts.append('<p class="answer">%s</p>' % inbrief.get_text())
     parts.append('<dl class="meta">'
-                 '<div><dt>Words</dt><dd>%d <span>target about %s</span></dd></div>'
+                 '<div><dt>Words</dt><dd>%d <span>%starget about %s</span></dd></div>'
                  '<div><dt>Exhibits</dt><dd>%s</dd></div>'
                  '<div><dt>Approved text drawn on</dt><dd>%s</dd></div>'
-                 '<div><dt>Fixes logged</dt><dd>%d</dd></div></dl>' % (total, P['target'], P['exhibits'], P['drawn'], len(P['fixes'])))
+                 '<div><dt>Fixes logged</dt><dd>%d</dd></div></dl>' % (total, ('plus %d in tables; ' % tablew) if tablew else '', P['target'], P['exhibits'], P['drawn'], len(P['fixes'])))
     parts.append('<nav class="toc"><a href="#decide">For your decision</a>' + ''.join(
         '<a href="#s%s">%s</a>' % (s['data-sec'].replace('.', '-'), s['data-sec']) for s in secs) +
         '<a href="#fixes">Fix log</a><a href="#sources">Sources</a></nav></header>')
